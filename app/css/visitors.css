@@ -1,0 +1,139 @@
+.visitors-section {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  height: 100%;
+  min-height: 100vh;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .visitors-section .container {
+    height: 100%;
+    min-height: 100vh; }
+
+.visitors-wrapper .terms {
+  margin-top: 30px; }
+
+.adds-form {
+  border: 2px dotted #ccc;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 20px 0; }
+  @media screen and (max-width: 425px) {
+    .adds-form {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+  .adds-form__title {
+    font-size: 16px;
+    font-family: Oswald-Regular, sans-serif;
+    margin-bottom: 0; }
+  .adds-form__link {
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    font-family: Oswald-Regular, sans-serif;
+    padding: 10px; }
+    .adds-form__link:hover, .adds-form__link:focus {
+      color: #fff;
+      border-radius: 0;
+      text-decoration: none; }
+    @media screen and (max-width: 425px) {
+      .adds-form__link {
+        margin-top: 15px;
+        width: 212px;
+        text-align: center; } }
+
+.created-form {
+  margin-top: 20px; }
+
+.implemented-form {
+  border-top: 3px dashed #000;
+  float: left;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding-top: 15px;
+  position: relative;
+  width: 100%; }
+  .implemented-form__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin-bottom: 15px;
+    text-align: right; }
+  .implemented-form__icon {
+    cursor: pointer;
+    display: inline-block; }
+    .implemented-form__icon:hover ~ .implemented-form__desc {
+      opacity: 1; }
+  .implemented-form__desc {
+    color: #999999;
+    font-family: Oswald-Regular, sans-serif;
+    font-size: 14px;
+    opacity: 0;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    position: absolute;
+    right: 30px; }
+
+.swimmers__text {
+  font-size: 14px;
+  font-family: Oswald-Regular, sans-serif; }
+
+.swimmers-category {
+  opacity: 0;
+  position: relative;
+  z-index: -1;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  .swimmers-category.open {
+    opacity: 1;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    z-index: auto; }
+
+.swimmers-status {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 220px;
+          flex: 0 0 220px;
+  max-width: 220px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .swimmers-status .pretty {
+    width: 50%; }
+    .swimmers-status .pretty:last-child {
+      margin-right: 0; }
+  .swimmers-status .help-block {
+    right: 35px; }
+
+#visitors-form {
+  display: none; }

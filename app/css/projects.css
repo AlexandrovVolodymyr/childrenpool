@@ -1,0 +1,376 @@
+/* PROJECTS SECTION */
+/* FONTS */
+@font-face {
+  font-family: "ProbaPro";
+  src: url("../fonts/ProbaPro/ProbaPro-Regular.woff") format("woff");
+  src: url("../fonts/ProbaPro/ProbaPro-Regular.woff2") format("woff2");
+  font-style: normal; }
+
+@font-face {
+  font-family: "LucidGrande-Regular";
+  src: url("../fonts/LucidaGrande/LucidaGrande.ttf") format("ttf");
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: "ProbaPro-Regular";
+  src: url("../fonts/ProbaPro/ProbaPro-Regular.woff") format("woff");
+  src: url("../fonts/ProbaPro/ProbaPro-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: "ProbaPro-Bold";
+  src: url("../fonts/ProbaPro/ProbaPro-Bold.woff") format("woff");
+  src: url("../fonts/ProbaPro/ProbaPro-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700; }
+
+@font-face {
+  font-family: "ProbaPro-Medium";
+  src: url("../fonts/ProbaPro/ProbaPro-Medium.woff") format("woff");
+  src: url("../fonts/ProbaPro/ProbaPro-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500; }
+
+/* projects */
+.projects {
+  background-color: #bdd747;
+  padding-top: 60px;
+  padding-bottom: 1rem;
+  overflow: hidden;
+  position: relative; }
+  @media screen and (min-width: 768px) {
+    .projects {
+      padding-top: 148px; } }
+  .projects-section {
+    background-color: #635eaa;
+    font-size: 0; }
+  .projects .slick-dots {
+    bottom: 0; }
+  .projects .slick-slide {
+    text-align: center; }
+  .projects__footer {
+    background-color: #bdd747;
+    position: relative;
+    min-height: 115px; }
+    .projects__footer-text {
+      color: #383838;
+      font-family: "ProbaPro-Regular", sans-serif;
+      font-size: 14px;
+      line-height: 20px;
+      position: absolute;
+      top: 1rem;
+      left: 50%;
+      -webkit-transform: translate(-50%, 0);
+          -ms-transform: translate(-50%, 0);
+              transform: translate(-50%, 0);
+      width: 100%;
+      max-width: 350px;
+      text-align: center;
+      opacity: 0.5; }
+      .projects__footer-text-down {
+        top: auto;
+        bottom: 1rem; }
+        .projects__footer-text-down a {
+          color: #383838;
+          font-family: "ProbaPro-Regular", sans-serif;
+          font-size: 14px; }
+    .projects__footer .projects-bg-yellow {
+      width: 100%; }
+  .projects__container {
+    width: 100%;
+    padding: 0 1rem; }
+    @media screen and (min-width: 992px) {
+      .projects__container {
+        max-width: 992px;
+        margin: auto; } }
+    @media screen and (min-width: 1200px) {
+      .projects__container {
+        max-width: 1000px; } }
+    @media screen and (min-width: 1300px) {
+      .projects__container {
+        max-width: 1200px; } }
+  .projects__viewport {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    position: inherit; }
+  .projects__item {
+    cursor: pointer;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 180px;
+            flex: 0 0 180px;
+    max-width: 180px;
+    margin: auto;
+    position: relative; }
+    .projects__item:hover .projects__description {
+      background-color: #635eaa; }
+    .projects__item:hover .projects__link {
+      color: #fff; }
+    .projects__item:hover .projects__image img {
+      width: 100%;
+      -webkit-transition: all 0.2s linear;
+      -o-transition: all 0.2s linear;
+      transition: all 0.2s linear;
+      -webkit-transform: scale(1.2);
+          -ms-transform: scale(1.2);
+              transform: scale(1.2); }
+    @media screen and (min-width: 768px) {
+      .projects__item {
+        max-width: 320px; } }
+    @media screen and (min-width: 992px) {
+      .projects__item {
+        max-width: 300px;
+        margin: 0; } }
+    @media screen and (min-width: 1300px) {
+      .projects__item {
+        max-width: 320px; } }
+  .projects__image {
+    border-top-left-radius: 21px;
+    border-top-right-radius: 21px;
+    font-size: 0;
+    overflow: hidden; }
+    .projects__image img {
+      width: 100%;
+      -webkit-transition: all 0.2s linear;
+      -o-transition: all 0.2s linear;
+      transition: all 0.2s linear; }
+      @media screen and (min-width: 768px) {
+        .projects__image img {
+          height: 220px; } }
+  .projects__description {
+    background-color: #fff;
+    border-bottom-left-radius: 21px;
+    border-bottom-right-radius: 21px;
+    padding: 10px 1rem 32px;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear; }
+    @media screen and (min-width: 768px) {
+      .projects__description {
+        min-height: 220px; } }
+  .projects__link {
+    display: block;
+    color: #383838;
+    font-family: "ProbaPro-Bold", sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    text-align: center; }
+    @media screen and (min-width: 768px) {
+      .projects__link {
+        font-size: 30px;
+        line-height: 34px; } }
+  .projects__text {
+    display: none;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    line-height: 1.2;
+    font-family: "ProbaPro-Regular", sans-serif; }
+    @media screen and (min-width: 768px) {
+      .projects__text {
+        display: block; } }
+  .projects__title {
+    color: #383838;
+    font-family: "ProbaPro-Bold", sans-serif;
+    font-size: 40px;
+    line-height: 30px;
+    letter-spacing: 0.5px;
+    position: static;
+    text-align: center; }
+    @media screen and (min-width: 768px) {
+      .projects__title {
+        font-size: 72px;
+        line-height: 1;
+        text-align: center; } }
+    @media screen and (min-width: 851px) {
+      .projects__title {
+        position: absolute;
+        top: -21px;
+        left: 1rem;
+        font-size: 72px;
+        line-height: 70px; } }
+  .projects__info {
+    color: #383838;
+    font-family: "ProbaPro-Regular", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 490px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    text-align: center; }
+    @media screen and (min-width: 768px) {
+      .projects__info {
+        font-size: 20px;
+        line-height: 28px;
+        padding: 1rem; } }
+    @media screen and (min-width: 850px) {
+      .projects__info {
+        margin-bottom: 0; } }
+    @media screen and (min-width: 992px) {
+      .projects__info {
+        text-align: left;
+        margin: 30px 0;
+        padding: 0; } }
+  .projects__arrows {
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 60%; }
+    @media screen and (min-width: 769px) {
+      .projects__arrows {
+        top: 50%; } }
+    .projects__arrows-right {
+      position: absolute;
+      right: -20px;
+      -webkit-transition: all 0.15s linear;
+      -o-transition: all 0.15s linear;
+      transition: all 0.15s linear; }
+      @media screen and (min-width: 1200px) {
+        .projects__arrows-right {
+          right: -45px; }
+          .projects__arrows-right:hover {
+            right: -35px; } }
+      .projects__arrows-right img {
+        width: 50px;
+        height: 50px; }
+        @media screen and (min-width: 1200px) {
+          .projects__arrows-right img {
+            width: 90px;
+            height: 90px; } }
+    .projects__arrows-left {
+      position: absolute;
+      left: -20px;
+      -webkit-transition: all 0.15s linear;
+      -o-transition: all 0.15s linear;
+      transition: all 0.15s linear; }
+      @media screen and (min-width: 1200px) {
+        .projects__arrows-left {
+          left: -45px; }
+          .projects__arrows-left:hover {
+            left: -35px; } }
+      .projects__arrows-left img {
+        width: 50px;
+        height: 50px; }
+        @media screen and (min-width: 1200px) {
+          .projects__arrows-left img {
+            width: 90px;
+            height: 90px; } }
+    .projects__arrows-wrap {
+      position: relative;
+      width: 100%; }
+
+/*/ projects */
+/* projects popup */
+.fancybox-slide .projects-popup {
+  width: 100%;
+  height: 100%; }
+  .fancybox-slide .projects-popup-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    @media screen and (min-width: 769px) {
+      .fancybox-slide .projects-popup-wrap {
+        display: block; } }
+  .fancybox-slide .projects-popup-gallery {
+    background: #bdd747 !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+    @media screen and (min-width: 1200px) {
+      .fancybox-slide .projects-popup-gallery {
+        padding-left: 140px;
+        padding-right: 140px; } }
+  .fancybox-slide .projects-popup__left {
+    width: 100%; }
+    @media screen and (min-width: 769px) {
+      .fancybox-slide .projects-popup__left {
+        float: left;
+        width: 40%; } }
+  .fancybox-slide .projects-popup__right {
+    padding-top: 50px;
+    width: 100%;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1; }
+    @media screen and (min-width: 769px) {
+      .fancybox-slide .projects-popup__right {
+        float: left;
+        width: 60%;
+        -webkit-box-ordinal-group: unset;
+            -ms-flex-order: unset;
+                order: unset;
+        padding: 0 1rem; } }
+  .fancybox-slide .projects-popup__border-img {
+    padding-top: 1rem;
+    text-align: center; }
+    .fancybox-slide .projects-popup__border-img img {
+      width: 219px;
+      height: 280px; }
+      @media screen and (min-width: 580px) {
+        .fancybox-slide .projects-popup__border-img img {
+          width: 402px;
+          height: 515px; } }
+  .fancybox-slide .projects-popup__title {
+    color: #383838;
+    font-family: "ProbaPro-Bold", sans-serif;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: left !important;
+    padding-top: 1rem;
+    max-width: 100%; }
+    @media screen and (min-width: 580px) {
+      .fancybox-slide .projects-popup__title {
+        padding-top: 100px; } }
+  .fancybox-slide .projects-popup__release {
+    color: #ffffff;
+    font-family: "ProbaPro-Regular", sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    margin-top: 20px;
+    margin-bottom: 40px; }
+  .fancybox-slide .projects-popup__writer {
+    color: rgba(0, 0, 0, 0.3);
+    font-family: "ProbaPro-Regular", sans-serif;
+    font-size: 18px;
+    line-height: 26px; }
+  .fancybox-slide .projects-popup__text {
+    color: black;
+    font-family: "ProbaPro-Regular", sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    margin-top: 21px;
+    max-width: 545px; }
+  .fancybox-slide .projects-popup .header__social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-top: 1rem; }
+    .fancybox-slide .projects-popup .header__social img {
+      margin: 0 5px; }
+
+/*/ projects popup */

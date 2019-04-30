@@ -1,0 +1,95 @@
+.countdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  position: relative;
+  width: 65%; }
+  @media screen and (max-width: 1100px) {
+    .countdown {
+      width: 100%;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; } }
+  @media screen and (max-width: 767px) {
+    .countdown {
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      padding: 0 1rem; } }
+  @media screen and (max-width: 580px) {
+    .countdown .main-timer {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 100%;
+              flex: 0 0 100%;
+      max-width: 100%; } }
+  .countdown .main-timer-digit {
+    font-size: 64px;
+    font-family: 'bebas_neuebold', sans-serif;
+    color: white;
+    text-transform: uppercase; }
+    @media screen and (max-width: 767px) {
+      .countdown .main-timer-digit {
+        font-size: 45px; } }
+    .countdown .main-timer-digit__unit {
+      display: inline-block;
+      font-size: 18px;
+      font-family: 'bebas_neuebold', sans-serif;
+      color: #515356;
+      margin-right: 50px;
+      padding: 0 5px;
+      text-transform: lowercase;
+      -webkit-transform: translateY(5px);
+          -ms-transform: translateY(5px);
+              transform: translateY(5px); }
+      @media screen and (max-width: 767px) {
+        .countdown .main-timer-digit__unit {
+          font-size: 14px;
+          margin-right: 2rem; } }
+      @media screen and (max-width: 580px) {
+        .countdown .main-timer-digit__unit {
+          margin-right: auto; } }
+  .countdown .main-timer-center {
+    line-height: 1; }
+    .countdown .main-timer-center .justify-block {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+  .countdown__text {
+    font-size: 20px;
+    margin-right: 50px; }
+    @media screen and (max-width: 767px) {
+      .countdown__text {
+        font-size: 14px;
+        margin-right: 0;
+        margin-bottom: 1rem; } }
+
+.timer_fonBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative; }

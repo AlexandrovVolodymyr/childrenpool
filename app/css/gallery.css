@@ -1,0 +1,104 @@
+/* full page slider */
+/* FONTS */
+@font-face {
+  font-family: "ProbaPro";
+  src: url("../fonts/ProbaPro/ProbaPro-Regular.woff") format("woff");
+  src: url("../fonts/ProbaPro/ProbaPro-Regular.woff2") format("woff2");
+  font-style: normal; }
+
+@font-face {
+  font-family: "LucidGrande-Regular";
+  src: url("../fonts/LucidaGrande/LucidaGrande.ttf") format("ttf");
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: "ProbaPro-Regular";
+  src: url("../fonts/ProbaPro/ProbaPro-Regular.woff") format("woff");
+  src: url("../fonts/ProbaPro/ProbaPro-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: "ProbaPro-Bold";
+  src: url("../fonts/ProbaPro/ProbaPro-Bold.woff") format("woff");
+  src: url("../fonts/ProbaPro/ProbaPro-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700; }
+
+@font-face {
+  font-family: "ProbaPro-Medium";
+  src: url("../fonts/ProbaPro/ProbaPro-Medium.woff") format("woff");
+  src: url("../fonts/ProbaPro/ProbaPro-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500; }
+
+.gallery {
+  font-size: 0;
+  padding-top: 50px;
+  position: relative;
+  overflow: hidden; }
+  .gallery .slick-dots {
+    bottom: 10px; }
+  .gallery .slick-arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    -webkit-transition: all 0.15s linear;
+    -o-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+    z-index: 1; }
+    .gallery .slick-arrow img {
+      width: 50px;
+      height: 50px; }
+  .gallery .slick-prev {
+    left: -20px; }
+  .gallery .slick-next {
+    right: -20px; }
+  .gallery__item {
+    width: 100%;
+    background-position: 50%;
+    background-size: cover;
+    height: 200px; }
+
+@media screen and (min-width: 580px) {
+  .gallery__item {
+    height: 350px; } }
+
+@media screen and (min-width: 768px) {
+  .gallery .slick-prev:hover {
+    left: -15px; }
+  .gallery .slick-next:hover {
+    right: -15px; }
+  .gallery__item {
+    height: 600px; } }
+
+@media screen and (min-width: 992px) {
+  .gallery .slick-dots {
+    bottom: 40px; }
+  .gallery .slick-arrow img {
+    width: 90px;
+    height: 90px; }
+  .gallery .slick-prev {
+    left: -45px; }
+    .gallery .slick-prev:hover {
+      left: -30px; }
+  .gallery .slick-next {
+    right: -45px; }
+    .gallery .slick-next:hover {
+      right: -30px; } }
+
+@media screen and (min-width: 1301px) {
+  .gallery .slick-prev {
+    left: -35px; }
+    .gallery .slick-prev:hover {
+      left: -15px; }
+  .gallery .slick-next {
+    right: -35px; }
+    .gallery .slick-next:hover {
+      right: -15px; } }
+
+/*/ full page slider */

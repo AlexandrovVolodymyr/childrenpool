@@ -1,0 +1,166 @@
+/* SEARCH */
+.search-page__content {
+  display: block;
+  margin-top: 20px; }
+  @media screen and (max-width: 767px) {
+    .search-page__content {
+      margin-top: 0; } }
+
+.search-page__container {
+  max-width: 1260px;
+  margin: auto; }
+  @media screen and (max-width: 1275px) {
+    .search-page__container {
+      max-width: 100%;
+      padding: 0 1rem; } }
+
+.search-page__title {
+  padding-top: 57px; }
+  @media screen and (max-width: 767px) {
+    .search-page__title {
+      font-size: 24px;
+      padding: 1rem 0; } }
+
+.search-page__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.search-page__aside {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 330px;
+          flex: 0 0 330px;
+  max-width: 330px;
+  width: 330px;
+  padding-left: 30px; }
+  @media screen and (max-width: 767px) {
+    .search-page__aside {
+      display: none; } }
+
+.search-page__main {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(100% - 330px);
+          flex: 0 0 calc(100% - 330px);
+  max-width: calc(100% - 330px);
+  width: calc(100% - 330px); }
+  @media screen and (max-width: 767px) {
+    .search-page__main {
+      width: 100%;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 100%;
+              flex: 0 0 100%;
+      max-width: 100%;
+      margin-top: 0;
+      padding-left: 0; } }
+
+.search-page .search-name {
+  color: #1c1b1a;
+  font-family: "Proxima Nova Semibold", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px; }
+
+.search-page .search-page-name {
+  color: #1c1b1a;
+  font-family: "Proxima Nova Semibold", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px; }
+
+.search-page__link {
+  border-bottom: 1px dashed rgba(28, 27, 26, 0.5);
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Proxima Nova", sans-serif;
+  color: rgba(28, 27, 26, 0.5);
+  line-height: 1;
+  margin-right: 1rem; }
+  .search-page__link:hover {
+    border-bottom: 1px dashed #1c1b1a;
+    color: #1c1b1a;
+    text-decoration: none; }
+  @media screen and (max-width: 767px) {
+    .search-page__link {
+      font-size: 14px; } }
+  .search-page__link--active {
+    border-bottom: 1px dashed transparent;
+    color: #1c1b1a; }
+
+.search-page__list {
+  margin-top: 45px; }
+
+.search-page__row {
+  position: relative;
+  margin-bottom: 28px; }
+
+.search-page .cat {
+  font-size: 11px; }
+
+.search-page__categories {
+  margin-top: 5px; }
+
+.search-page__appellative {
+  color: #1c1b1a;
+  display: inline-block;
+  font-family: "Proxima Nova Semibold", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1; }
+  .search-page__appellative:hover {
+    color: #1c1b1a; }
+
+.search-page__excerpt {
+  color: #1c1b1a;
+  font-family: "Open Sans Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-top: 3px;
+  max-width: 64%;
+  overflow: hidden;
+  padding-bottom: 30px; }
+  .search-page__excerpt:hover {
+    text-decoration: none; }
+  @media screen and (max-width: 991px) {
+    .search-page__excerpt {
+      max-width: 100%; } }
+  @media screen and (max-width: 425px) {
+    .search-page__excerpt {
+      font-size: 12px; } }
+
+.search-page__icon {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .search-page__icon:nth-child(2) {
+    left: 70px; }
+  .search-page__icon .icon-svg {
+    width: 17px;
+    height: 17px; }
+  .search-page__icon .eye {
+    width: 24px;
+    height: 20px; }
+  .search-page__icon span {
+    display: inline-block;
+    color: #dadada;
+    font-family: "Proxima Nova Semibold", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.65px;
+    margin-left: 6px; }

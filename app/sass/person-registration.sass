@@ -1,0 +1,389 @@
+@import 'vars'
+
+.pr-section
+	//height: 100vh
+	padding: 15px
+	.container
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		height: 100%
+		min-height: 100vh
+		@media screen and (max-width: 575px)
+			padding-left: 0
+			padding-right: 0
+		
+.pr
+	position: relative
+	@media screen and (max-width: 767px)
+		width: 100%
+	.ps-form-answer
+		background-color: #fff
+		-webkit-border-radius: 4px
+		-moz-border-radius: 4px
+		border-radius: 4px
+		display: none
+		width: 100%
+		min-height: 150px
+		box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.4)
+		margin-top: 15px
+		float: left
+		position: relative
+		&__message
+			font-family: $font
+			font-size: 18px
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			width: 100%
+			text-align: center
+		img
+			margin-right: 10px
+			margin-bottom: 3px
+	&__title
+		font-size: 20px
+		font-family: $font
+		text-align: center
+		text-transform: uppercase
+		&-3
+			font-size: 16px
+			margin-top: 15px
+	&__text
+		font-family: $font
+		font-size: 14px
+		line-height: 1
+		@media screen and (max-width: 575px)
+			flex: 0 0 100%
+			max-width: 100%
+			margin-bottom: 10px
+	&__input
+		-webkit-border-radius: 4px
+		-moz-border-radius: 4px
+		border-radius: 4px
+		border: 1px solid $color
+		font-family: $font
+		font-size: 16px
+		display: block
+		width: 320px
+		padding: 5px 15px
+		&:focus
+			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4)
+		@media screen and (max-width: 575px)
+			flex: 0 0 100%
+			max-width: 100%
+			width: 100%
+
+.logo
+	text-align: center
+	margin-bottom: 15px
+	&__link
+		display: inline-block
+
+.pr-form
+	display: flex
+	flex-direction: column
+	width: 550px
+	margin: auto
+	padding: 15px
+	@media screen and (max-width: 575px)
+		width: 100%
+		padding-left: 0
+		padding-right: 0
+	&__row
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 25px
+		position: relative
+		&:last-child
+			margin-bottom: 0
+		@media screen and (max-width: 575px)
+			margin-bottom: 30px
+		span.help
+			font-family: $font
+			color: #999
+			font-size: 12px
+			position: absolute
+			bottom: -23px
+			max-width: 180px
+			line-height: 1
+			@media screen and (max-width: 575px)
+				display: none !important
+		.form-error
+			display: block
+			flex: 0 0 100%
+			max-width: 100%
+			font-size: 12px
+			position: absolute
+			bottom: -20px
+			right: 0
+			margin: 0
+			@media screen and (max-width: 575px)
+				top: 68px
+				left: 0
+				bottom: unset
+			@media screen and (max-width: 344px)
+				font-size: 11px
+	address
+		@media screen and (max-width: 575px)
+			width: 100%
+		input
+			margin-bottom: 10px
+			&:last-child
+				margin-bottom: 0
+	&-submit
+		-webkit-border-radius: 4px
+		-moz-border-radius: 4px
+		border-radius: 4px
+		border: none
+		color: #fff
+		cursor: pointer
+		font-family: $font
+		font-size: 14px
+		display: flex
+		padding: 10px 25px
+		margin-left: auto
+		transition: all 0.3s ease-in-out
+		&:hover, &:focus
+			-webkit-border-radius: 0
+			-moz-border-radius: 0
+			border-radius: 0
+			color: #fff
+			
+				
+.select-gender
+	select
+		background: url('../img/select.svg') no-repeat 95% 0
+		-webkit-background-size: 5%
+		background-size: 5%
+		cursor: pointer
+		@media screen and (max-width: 767px)
+			background-size: 12.5px
+	
+.terms
+	flex-wrap: wrap
+	margin-bottom: 15px
+	&-first, &-second, &-third
+		flex: 0 0 100%
+		max-width: 100%
+		display: flex
+		align-items: center
+		justify-content: flex-end
+		.pretty
+			margin-right: 0
+			flex: 0 0 100%
+			max-width: 320px
+			margin-bottom: 20px
+			text-align: right
+			transition: all 0.3s linear
+			white-space: normal
+		.pretty.has-error
+			margin-bottom: 40px
+		.form-error
+			top: 15px
+			bottom: unset
+			display: inline-block
+			opacity: 1
+	
+	&-first, &-second
+		.pretty
+			margin-bottom: 25px
+	&__text
+		font-size: 13px
+		font-family: $font
+		position: relative
+		z-index: 10
+
+.token-form
+	display: none
+	flex-direction: column
+	width: 450px
+	margin: auto
+	padding: 15px
+	@media screen and (max-width: 575px)
+		width: 100%
+		padding-left: 0
+		padding-right: 0
+	&__row
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		align-items: center
+		margin-bottom: 25px
+		position: relative
+		&:last-child
+			margin-bottom: 0
+	&__input
+		border-radius: 4px
+		border: 1px solid $color
+		font-family: $font
+		font-size: 16px
+		display: block
+		padding: 5px 15px
+		flex: 0 0 100%
+		max-width: 100%
+		&:focus
+			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4)
+	&__label
+		font-family: $font
+		font-size: 14px
+		line-height: 1
+		margin-bottom: 15px
+		@media screen and (max-width: 575px)
+			margin-bottom: 10px
+	&__submit
+		-webkit-border-radius: 4px
+		-moz-border-radius: 4px
+		border-radius: 4px
+		border: none
+		color: #fff
+		cursor: pointer
+		font-family: $font
+		font-size: 14px
+		display: flex
+		padding: 10px 25px
+		margin: auto
+		transition: all 0.3s ease-in-out
+		&:hover, &:focus
+			-webkit-border-radius: 0
+			-moz-border-radius: 0
+			border-radius: 0
+			color: #fff
+
+.user-info
+	&-section
+		display: none
+		width: 100%
+		padding: 15px
+		max-width: 650px
+		margin: 0 auto
+		.btn-add
+			color: #000
+			font-size: 14px
+			font-family: $font
+			display: inline-block
+			margin-top: 15px
+			&.disabled
+				color: gray
+				pointer-events: none
+			&:focus
+				text-decoration: none
+	&__title
+		font-size: 25px
+		font-family: $font
+		font-weight: bold
+		margin-bottom: 30px
+		text-align: center
+		text-transform: uppercase
+.user-list
+	&__item
+		border-bottom: 1px solid $color
+		display: flex
+		justify-content: space-between
+		align-items: center
+		flex-wrap: wrap
+		margin-bottom: 25px
+		padding-bottom: 15px
+	&__name, &__value
+		font-family: $font-ubuntu
+		font-size: 16px
+		display: inline-block
+		line-height: 1
+
+.visitors-answer, .age-answer
+	background: #fff
+	-webkit-border-radius: 4px
+	-moz-border-radius: 4px
+	border-radius: 4px
+	display: none
+	position: fixed
+	left: 50%
+	top: 50%
+	transform: translate(-50%, -50%)
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75)
+	-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75)
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75)
+	padding: 50px
+	&__message
+		font-family: $font
+		font-size: 18px
+		
+#termsModal, #policeModal
+	.modal-header
+		flex-direction: column
+		.close
+			margin-left: auto
+	.modal-title
+		color: $color-modal-title
+		font-family: $font-ubuntu
+		font-weight: bold
+		font-size: 21px
+		margin-bottom: 10px
+		&_excerpt
+			color: $color-modal-text
+			font-family: $font-ubuntu
+			font-size: 14px
+	.rules-list
+		color: $color-modal-text
+		font-size: 16px
+		font-family: $font-ubuntu
+		&__title
+			font-weight: bold
+			font-size: 16px
+			line-height: 1
+			margin-bottom: 15px
+		&__text
+			font-size: 14px
+			margin-bottom: 15px
+		&__num
+			display: inline-block
+			font-size: 14px
+			font-weight: bold
+			font-family: $font-ubuntu
+			margin-right: 5px
+	address
+		margin-bottom: 15px
+		font-size: 16px
+	.btn
+		border-radius: 4px
+		border: none
+		color: #fff
+		cursor: pointer
+		font-family: $font
+		font-size: 14px
+		display: flex
+		padding: 10px 25px
+		margin-left: auto
+		transition: all 0.3s ease-in-out
+		&:hover, &:focus
+			border-radius: 0
+	.rules-list-on
+		font-weight: bold
+		font-size: 16px
+		line-height: 1
+		margin-bottom: 15px
+	.rules-link
+		color: $color-modal-title
+		display: inline-block
+		&:hover, &:focus
+			color: $color-modal-title
+
+.children
+	&__title
+		font-size: 21px
+		font-family: $font
+		font-weight: bold
+		margin-bottom: 15px
+		
+.children-table
+	font-size: 16px
+	thead
+		background-color: #eeeeee
+		td
+			font-family: $font
+	tbody
+		td
+			font-size: 14px
+			font-family: $font-ubuntu

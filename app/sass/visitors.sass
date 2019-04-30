@@ -1,0 +1,113 @@
+@import 'vars'
+
+.visitors-section
+	padding-top: 15px
+	padding-bottom: 15px
+	height: 100%
+	min-height: 100vh
+	display: none
+	align-items: center
+	.container
+		height: 100%
+		min-height: 100vh
+		
+.visitors-wrapper
+	.terms
+		margin-top: 30px
+		
+.adds-form
+	border: 2px dotted $color
+	padding: 15px
+	display: flex
+	align-items: center
+	justify-content: space-between
+	margin: 20px 0
+	@media screen and (max-width: 425px)
+		flex-direction: column
+	&__title
+		font-size: 16px
+		font-family: $font
+		margin-bottom: 0
+	&__link
+		-webkit-border-radius: 4px
+		-moz-border-radius: 4px
+		border-radius: 4px
+		color: #fff
+		font-size: 14px
+		font-family: $font
+		padding: 10px
+		&:hover, &:focus
+			color: #fff
+			-webkit-border-radius: 0
+			-moz-border-radius: 0
+			border-radius: 0
+			text-decoration: none
+		@media screen and (max-width: 425px)
+			margin-top: 15px
+			width: 212px
+			text-align: center
+			
+.created-form
+	margin-top: 20px
+	
+.implemented-form
+	border-top: 3px dashed #000
+	float: left
+	margin-bottom: 20px
+	margin-top: 20px
+	padding-top: 15px
+	position: relative
+	width: 100%
+	&__row
+		display: flex
+		align-items: center
+		justify-content: flex-end
+		margin-bottom: 15px
+		text-align: right
+	&__icon
+		cursor: pointer
+		display: inline-block
+		&:hover
+			~ .implemented-form__desc
+				opacity: 1
+	&__desc
+		color: darken($color, 20%)
+		font-family: $font
+		font-size: 14px
+		opacity: 0
+		transition: all 0.3s linear
+		position: absolute
+		right: 30px
+	//&:last-child
+	//	margin-bottom: 0
+		
+.swimmers
+	&__text
+		font-size: 14px
+		font-family: $font
+.swimmers-category
+	opacity: 0
+	position: relative
+	z-index: -1
+	transition: all 0.3s ease-in-out
+	&.open
+		opacity: 1
+		height: auto
+		display: flex
+		justify-content: space-between
+		z-index: auto
+.swimmers-status
+	flex: 0 0 220px
+	max-width: 220px
+	display: flex
+	justify-content: flex-end
+	align-items: center
+	.pretty
+		width: 50%
+		&:last-child
+			margin-right: 0
+	.help-block
+		right: 35px
+		
+#visitors-form
+	display: none

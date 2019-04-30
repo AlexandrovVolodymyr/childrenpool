@@ -1,0 +1,39 @@
+{
+  "name": "official",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery-mask-plugin": "^1.14.3",
+    "browser-sync": "^2.23.3",
+    "datepicker-bootstrap": "^1.9.13",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-cache": "^1.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.2.1",
+    "gulp-uglifyjs": "^0.6.2",
+    "imagemin-pngquant": "^5.0.1",
+    "jquery-form-validator": "^2.3.79",
+    "jquery-mask-plugin": "^1.14.15",
+    "tether": "^1.4.4"
+  },
+  "dependencies": {
+    "@fancyapps/fancybox": "^3.3.5",
+    "animate.css": "^3.6.1",
+    "bootstrap": "^4.0.0-alpha.6",
+    "material-design-icons": "^3.0.1",
+    "pretty-checkbox": "^3.0.3",
+    "rangeslider.js": "^2.3.2"
+  }
+}

@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/* TIMER */
+.countdown {
+  background-color: #ea5419;
+  height: calc(100% - 250px);
+  padding: 60px 30px; }
+  @media screen and (max-width: 991px) {
+    .countdown {
+      padding: 1rem 35%;
+      width: 100%; } }
+  @media screen and (max-width: 767px) {
+    .countdown {
+      padding: 1rem 32.5%; } }
+  @media screen and (max-width: 650px) {
+    .countdown {
+      padding: 1rem 30%; } }
+  @media screen and (max-width: 580px) {
+    .countdown {
+      padding: 2rem 20%;
+      height: auto; } }
+  @media screen and (max-width: 425px) {
+    .countdown {
+      padding: 2rem 15%; } }
+  @media screen and (max-width: 375px) {
+    .countdown {
+      padding: 2rem 10%; } }
+  .countdown__text {
+    color: #ffffff;
+    font-family: "Proxima Nova", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.14px; }
+  .countdown__text-big {
+    color: #FFFFFF;
+    font-family: "Proxima Nova Semibold", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 32px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-top: 12.5px; }
+
+.timer {
+  font-size: 18pt;
+  font-family: sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 45px; }
+  @media screen and (max-width: 767px) {
+    .timer {
+      padding-top: 2rem; } }
+  .timer .days, .timer .hours, .timer .minutes {
+    border: 3px solid #fff;
+    text-shadow: 0 0 6px #bdcbcc;
+    color: #ffffff;
+    line-height: 14px;
+    font-family: "Proxima Nova", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    width: 64px;
+    height: 72px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: relative; }
+  .timer .days {
+    padding: 15px 0; }
+    .timer .days:after {
+      content: 'дней';
+      font-size: 18px !important;
+      font-weight: 400;
+      display: table;
+      width: 100%;
+      text-align: center; }
+  .timer .hours {
+    padding: 15px 0; }
+    .timer .hours:after {
+      content: 'часов';
+      font-size: 18px !important;
+      font-weight: 400;
+      display: table; }
+  .timer .minutes {
+    padding: 15px 0; }
+    .timer .minutes:after {
+      content: 'минут';
+      font-size: 18px !important;
+      font-weight: 400;
+      display: table; }
+  .timer .delimiter {
+    display: inline-block;
+    font-family: "Proxima Nova Bold", sans-serif;
+    font-weight: bold;
+    color: #ffffff; }
+
+@media all and (-ms-high-contrast: none) {
+  .timer .days, .timer .hours, .timer .minutes {
+    font-size: 19px !important; }
+    .timer .days:after, .timer .hours:after, .timer .minutes:after {
+      font-size: 18px !important; }
+  *::-ms-backdrop .days:after, *::-ms-backdrop .hours:after, *::-ms-backdrop .minutes:after, .timer .days:after, .timer .hours:after, .timer .minutes:after {
+    font-size: 18px !important; } }

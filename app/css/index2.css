@@ -1,0 +1,30 @@
+.feedback.index2 {
+  padding-top: 140px; }
+  @media screen and (max-width: 767px) {
+    .feedback.index2 {
+      padding-top: 0; } }
+  .feedback.index2 .feedback-lines-last {
+    margin-top: 80px; }
+  .feedback.index2 .feedback__title {
+    max-width: 767px; }
+  .feedback.index2 .feedback__absolute_left {
+    bottom: -450px;
+    left: -650px; }
+    @media screen and (max-width: 1350px) {
+      .feedback.index2 .feedback__absolute_left {
+        display: none; } }
+  .feedback.index2 .feedback__absolute_buckle {
+    position: absolute;
+    right: 0;
+    bottom: -200px; }
+    @media screen and (max-width: 1199px) {
+      .feedback.index2 .feedback__absolute_buckle {
+        display: none; } }
+
+@media screen and (max-width: 767px) {
+  .talent.index2 .talent__title {
+    text-align: center;
+    max-width: 100%; } }
+
+.girl-mobile.index2 {
+  display: none; }

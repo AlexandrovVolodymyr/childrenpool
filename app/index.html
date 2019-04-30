@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&amp;subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/libs.min.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-16x16.icon">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-32x32.icon">
+
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#000">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#000">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+</head>
+
+<body class="body">
+	<section class="pr-section">
+    <div class="container">
+      <div class="logo">
+        <a class="logo__link" href="#"><img src="img/logo-bbf.jpg" class="logo__image" alt="logo"></a>
+      </div>
+      <div class="pr">
+        <h2 class="pr__title">antrag - kinder dauerkarte für die bbf bäder</h2>
+        <form class="pr-form" id="pr-form" novalidate>
+          <div class="pr-form__row select-gender">
+            <label for="sex" class="pr__text">Anrede<span>*</span></label>
+            <select name="sex" id="sex" class="pr__input pr__select"
+                    required="required">
+              <option value="0" selected>Herr</option>
+              <option value="1">Frau</option>
+              <option value="2">Divers</option>
+            </select>
+          </div>
+          <div class="pr-form__row">
+            <label class="pr__text">Vorname<span>*</span></label>
+            <input type="text" class="pr__input first-name-input" placeholder="Vorname"
+                   name="firstName"
+                   required="required"
+                   data-validation="length"
+                   data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                   data-validation-length="1-25">
+          </div>
+          <div class="pr-form__row">
+            <label class="pr__text">Nachname*</label>
+            <input type="text" class="pr__input last-name-input" placeholder="Nachname"
+                   name="lastName"
+                   required="required"
+                   data-validation="length"
+                   data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                   data-validation-length="1-25">
+          </div>
+          <div class="pr-form__row current-address">
+            <label class="pr__text">Stadt*</label>
+            <input type="text" placeholder="Stadt" class="pr__input city-input"
+                   name="city"
+                   required="required"
+                   data-validation="length"
+                   data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                   data-validation-length="1-50">
+          </div>
+          <div class="pr-form__row current-address">
+            <label class="pr__text">Straße<span>*</span></label>
+            <input type="text" placeholder="Straße" class="pr__input street-input"
+                   name="street"
+                   required="required"
+                   data-validation="length"
+                   data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                   data-validation-length="1-50">
+          </div>
+          <div class="pr-form__row current-address">
+            <label class="pr__text">Haus<span>*</span></label>
+            <input type="text" placeholder="Haus" class="pr__input house-input"
+                   name="house"
+                   required="required"
+                   data-validation="length"
+                   data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                   data-validation-length="1-50">
+          </div>
+          <div class="pr-form__row">
+            <label class="pr__text">Geburtstag<span>*</span></label>
+            <input id="datepicker" class="pr__input hasDatepicker birth-date-input" placeholder="Geburtstag"
+                   data-attr="birth-date-input"
+                   data-validation-error-msg="Sie haben kein korrektes Datum angegeben"
+                   data-validation="required">
+            <!--<input type="text" class="pr__input birth-date-input" placeholder="YYYY-MM-DD"-->
+                   <!--name="birthDate"-->
+                   <!--required="required"-->
+                   <!--data-validation="birthdate"-->
+                   <!--data-validation-help="Keine Daten in der Zukunft oder älter als 120 Jahre"-->
+                   <!--data-validation-error-msg="Sie haben kein korrektes Datum angegeben"-->
+                   <!--data-validation-format="yyyy-mm-dd">-->
+          </div>
+          <div class="pr-form__row">
+            <label class="pr__text">Mail Adresse<span>*</span></label>
+            <input type="text" class="pr__input email-input" placeholder="Mail"
+                   name="email"
+                   data-validation="email"
+                   data-validation-error-msg="Sie haben keine korrekte E-Mail-Adresse angegeben"
+                   required="required">
+          </div>
+          <div class="pr-form__row current-address">
+            <label class="pr__text">Postleitzahl<span>*</span></label>
+            <input type="text" class="pr__input postcode-input" placeholder="Postleitzahl"
+                   name="postcode"
+                   data-validation="number"
+                   data-validation-allowing="float"
+                   data-validation-error-msg="Sie haben keine korrekte Nummer angegeben"
+                   required="required">
+          </div>
+          <div class="pr-form__row terms">
+            <div class="terms-first">
+              <div class="pretty p-default p-curve">
+                <input type="checkbox" name="terms" class="terms-input"
+                       data-validation="required"
+                       data-validation-error-msg="Sie müssen unseren Allgemeinen Geschäftsbedingungen zustimmen"/>
+                <div class="state p-info">
+                  <label>
+                    <a href="" data-toggle="modal" data-target="#termsModal" class="terms__text">Geschäftsbedingungen<span>*</span></a>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="terms-second">
+              <div class="pretty p-default p-curve">
+                <input type="checkbox" name="police" class="police-input"
+                       data-validation="required"
+                       data-validation-error-msg="Sie müssen unserer Datenschutzerklärung zustimmen"/>
+                <div class="state p-info">
+                  <label>
+                    <a href="#" data-toggle="modal" data-target="#policeModal" class="terms__text">Datenschutz-Bestimmungen<span>*</span></a>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pr-form__row">
+            <input type="submit" value="Senden" class="btn-info pr-form-submit">
+          </div>
+        </form>
+        <div class="ps-form-answer">
+          <div class="ps-form-answer__message">
+            <img src="img/check.png" alt="check">
+            Die Nachricht wurde an Ihre E-Mail gesendet.
+          </div>
+        </div>
+      </div>
+      <div class="token">
+        <form class="token-form" id="token-form" novalidate>
+          <div class="token-form__row">
+            <label class="token-form__label">Geben Sie das Token aus der E-Mail ein</label>
+            <input type="text" class="token-form__input">
+          </div>
+          <div class="token-form__row">
+            <input type="submit" value="Senden" class="btn-info token-form__submit">
+          </div>
+        </form>
+      </div>
+
+      <section class="user-info-section">
+        <h2 class="user-info__title">Your information</h2>
+        <div class="user-list">
+          <div class="user-list__item">
+            <span class="user-list__name">First Name</span>
+            <span class="user-list__value user-list__value-firstName"></span>
+          </div>
+          <div class="user-list__item">
+            <span class="user-list__name">Last Name</span>
+            <span class="user-list__value user-list__value-lastName"></span>
+          </div>
+          <div class="user-list__item">
+            <span class="user-list__name">Birth date</span>
+            <span class="user-list__value user-list__value-birthDate"></span>
+          </div>
+          <div class="user-list__item">
+            <span class="user-list__name">City</span>
+            <span class="user-list__value user-list__value-city"></span>
+          </div>
+          <div class="user-list__item">
+            <span class="user-list__name">Street</span>
+            <span class="user-list__value user-list__value-street"></span>
+          </div>
+          <div class="user-list__item">
+            <span class="user-list__name">House</span>
+            <span class="user-list__value user-list__value-house"></span>
+          </div>
+          <div class="user-list__item">
+            <span class="user-list__name">Sex</span>
+            <span class="user-list__value user-list__value-sex"></span>
+          </div>
+          <div class="user-list__item">
+            <span class="user-list__name">Email</span>
+            <span class="user-list__value user-list__value-email"></span>
+          </div>
+        </div>
+        <div class="children">
+          <div class="children__title">Erfasste Kinder:</div>
+          <table class="table children-table">
+            <thead>
+              <tr>
+                <td>Vorname</td>
+                <td>Nachname</td>
+                <td>Alter</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nina</td>
+                <td>Keller</td>
+                <td>01.01.1980</td>
+              </tr>
+              <tr>
+                <td>Paul</td>
+                <td>Keller</td>
+                <td>01.01.1980</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <a href="#" class="btn-add">You can add visitor information</a>
+        <div class="visitors-wrapper"></div>
+      </section>
+
+      <div class="visitors-answer">
+        <div class="visitors-answer__message">
+          <img src="img/check.png" alt="check">
+          Die Nachricht wurde an Ihre E-Mail gesendet.
+        </div>
+      </div>
+
+      <div class="age-answer">
+        <div class="age-answer__message">
+          <img src="img/check.png" alt="check">
+          Age < 14
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="termsModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Allgemeine Geschäftsbedingungen</h3>
+          <span class="modal-title_excerpt">für Kaufverträge, die über den Online-Shop unter www.bbf-frankfurt.de zwischen der BäderBetriebe Frankfurt GmbH als Verkäufer (im Folgenden: „BBF“) und den Bestellern als Käufer (im Folgenden: „Besteller“) geschlossen werden.</span>
+        </div>
+        <div class="modal-body">
+          <ul class="rules-list">
+            <li class="rules-list__item">
+              <p class="rules-list__title">1. Geltungsbereich</p>
+              <p class="rules-list__text">
+                <span class="rules-list__num">1.1</span> Die nachfolgenden Allgemeinen Geschäftsbedingungen (AGB) gelten für die Online-Bestellung und den Versand von Gutscheinen durch die BäderBetriebe Frankfurt GmbH im Internet über den Online Shop
+                www.bbf-frankfurt.de. In ihrer zum Zeitpunkt der Bestellung gültigen Fassung. Abweichende und/oder ergänzende Allgemeine Geschäftsbedingungen des Bestellers finden keine Anwendung, es sei denn, die BBF stimmt der Geltung derartiger Bedingungen ausdrücklich zu.
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">2. Identität des Vertragspartners</p>
+              <p class="rules-list__text">
+                Der Vertrag kommt mit der BäderBetriebe Frankfurt GmbH zustande.
+              </p>
+              <address>
+                Anschrift: <br>
+                Am Hauptbahnhof 16 <br>
+                60329 Frankfurt am MainSitz der Gesellschaft: Frankfurt am Main <br>
+                Amtsgericht Frankfurt am Main, HRB 42451 <br>
+                USt-ID-Nr.: DE 187077270 <br>
+                Geschäftsführer: Frank Müller <br>
+                Telefon: 069 27 10 89 10 10
+              </address>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">3. Vertragsschluss</p>
+              <p class="rules-list__text">
+                Die auf www.bbf-frankfurt.de präsentierten Gutscheine stellen lediglich eine Aufforderung an den Besteller dar, ein Angebot zum Abschluss eines Vertrages abzugeben.
+                Der Besteller kann aus dem Angebot einen Gutschein auswählen und diesen durch Klick auf den Button „in den Warenkorb“ in den Warenkorb legen und anschließend nach Anklicken des Buttons „zur Kasse“ seine persönlichen Daten eingeben.
+                Vor Abschluss der Bestellung kann der Besteller diese noch einmal überprüfen und ggf. korrigieren indem er auf den Button „Bearbeiten“ klickt.
+                In dem Feld „Mein Warenkorb“ kann der Besteller vor Abschluss der Bestellung die Art und die Menge der ausgewählten Gutscheine ändern.
+                Durch das Anklicken des Buttons „kaufen“ im letzten Schritt des Bestellprozesses gibt der Besteller ein verbindliches Angebot zum Kauf der im Warenkorb befindlichen Ware ab (auf Abschluss eines Vertrages mit der BBF) ab (Bestellung).
+                Mit dem Absenden des Angebots über das Internet erklärt der Besteller sich mit der Geltung dieser AGB einverstanden. Der Vertrag mit der BBF kommt erst mit Zugang der unverzüglich per E-Mail versandten Auftragsbestätigung bei dem Besteller zustande. Der Auftragsbestätigung sind die Rechnung,
+                die Allgemeinen Geschäftsbedingungen und die Widerrufsbelehrung beigefügt. Ein Schweigen der BBF auf die Bestellung eines Online-Shop-Kunden stellt keine Annahme dar.
+              </p>
+              <p class="rules-list__text">
+                <span class="rules-list__num">3.2</span>
+                Die Bestellung wird von der BBF nach Vertragsschluss gespeichert. Der Besteller kann bei entsprechender Registrierung in seinem passwortgeschützten Bereich („Mein Benutzerkonto“) seine Daten über die abgeschlossenen, offenen und kürzlich versandten Bestellungen einsehen und verwalten.
+              </p>
+              <p class="rules-list__text">
+                <span class="rules-list__num">3.3</span>
+                Gutschein-Bestellungen über den Online-Shop www.bbf-frankfurt.de werden von der BBF nur bis zu einem Höchstwert von 1.000,00 € pro Bestellung angenommen.
+              </p>
+              <p class="rules-list__text">
+                <span class="rules-list__num">3.4</span>
+                Der Bestellvorgang einschließlich des Vertragsschlusses ist lediglich in deutscher Sprache möglich.
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">4. Preise und Versandkosten</p>
+              <p class="rules-list__text">
+                <span class="rules-list__num">4.1</span>
+                Die unter www.bbf-frankfurt.de eingestellten Preise sind in Euro angegeben und enthalten die jeweils gültige gesetzliche Umsatzsteuer und verstehen sich ohne Kosten für Verpackung und Versand.
+              </p>
+              <p class="rules-list__text">
+                <span class="rules-list__num">4.2</span>
+                Online bestellte Gutscheine erhält der Besteller kostenlos in elektronischer Form (Print-at-Home Funktion).</p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">5. Zahlungsbedingungen</p>
+              <p class="rules-list__text">
+                <span class="rules-list__num">5.1. Zahlungsmöglichkeiten</span><br>
+                Die akzeptierten Zahlungsarten sind Kreditkartenzahlung, PayPal und Sofortüberweisung. Bei Zahlung per Kreditkarte, Sofortüberweisung oder PayPal wird das Konto des Bestellers unmittelbar belastet.
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">7. Versand</p>
+              <p class="rules-list__text">
+                <span class="rules-list__num">7.1</span>
+                Der Versand von Gutscheinen erfolgt nach Vertragsschluss in elektronischer Form (über die Print at Home Funktion). Der Print-at-Home Gutschein ist nur lesbar und gültig, wenn er auf einem weißen DIN-A-4-Papier ausgedruckt wird. Von jedem Print-at-Home Gutschein darf nur ein Exemplar gedruckt werden. Es ist untersagt, der Print-at-Home Gutschein in digitaler oder in gedruckter Form zu vervielfältigen oder zu ändern. Der Print-at-Home Gutschein wird an der Kasse vor Ort von einem Barcode-Leser identifiziert, geprüft und in eine Transponderkarte umgetauscht. Der Barcode muss gut lesbar sein und ist nur einmal verwendbar.
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">8. Rückgabe und Umtausch</p>
+              <p class="rules-list__text">
+                Unbeschadet des Widerrufsrechts, über das der Besteller gesondert belehrt wird (siehe Widerrufsbelehrung) sind Gutscheine von der Rückgabe ausgeschlossen und können auch nicht umgetauscht werden.
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">9. Einlösen von Gutscheinen</p>
+              <p class="rules-list__text">
+                <span class="rules-list__num">9.1</span>
+                Gutscheine müssen einmalig an einer vor-Ort-Kasse eingelöst werden. Sie behalten ihre Gültigkeit für die Dauer von zehn Jahren beginnend mit der Freischaltung des Gutscheins.
+              </p>
+              <p class="rules-list__text">
+                <span class="rules-list__num">9.2</span>
+                Eine vollständige oder teilweise Barauszahlung gekaufter Gutscheine ist ausgeschlossen.
+              </p>
+              <p class="rules-list__text">
+                <span class="rules-list__num">9.3</span>
+                Bei Dienstleistungen wie Teilnahme an Kursen mit begrenzter Teilnehmerzahl, ist eine vorherige Anmeldung erforderlich. Die Teilnahmemöglichkeit ist von der Verfügbarkeit des jeweiligen Angebots abhängig.
+              </p>
+              <p class="rules-list__text">
+                <span class="rules-list__num">9.4</span>
+                Das Einlösen der Gutscheine für Produkte oder Dienstleistungen Dritter ist ausgeschlossen. Dies gilt insbesondere für Massagen und Gastronomie-Angebote.
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">10. Haus- und Badeordnung</p>
+              <p class="rules-list__text">
+                Mit der Bestellung von Gutscheinen bzw. deren Einlösung erkennt der Besteller die für die Nutzung der Bäder geltende Haus- und Badeordnung der BäderBetriebe Frankfurt GmbH an. Diese hängt gut sichtbar in den Eingangsbereichen der Bäder aus.
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">11. Datenschutz / Datensicherheit; Speicherung des Vertragstextes</p>
+              <p class="rules-list__text">
+                Die personenbezogenen Bestelldaten werden nach den Bestimmungen des Bundesdatenschutzgesetzes und des Telemediengesetzes erhoben, verarbeitet und genutzt. Ausschließlich im Rahmen der Bestellabwicklung (Zahlung, Versand) werden die hierfür erforderlichen Daten an Dritte weitergegeben. Darüber hinaus erfolgt eine Weitergabe an Dritte nicht. Bei der Bestellung werden grundsätzlich alle Daten SSL-verschlüsselt übertragen und sind geschützt. Der Besteller kann jederzeit unentgeltlich Auskunft über die
+                über ihn bei der BBF gespeicherten Daten erhalten.
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">12. Schlussbestimmungen</p>
+              <p class="rules-list__text">
+                <span class="rules-list__num">12.1</span>
+                Auf Verträge zwischen den BBF und dem Besteller findet das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts Anwendung. Die gesetzlichen Vorschriften zur Beschränkung der Rechtswahl und zur Anwendbarkeit zwingender Vorschriften insbesondere des Staates, in dem der Besteller als Verbraucher seinen gewöhnlichen Aufenthalt hat, bleiben unberührt.
+              </p>
+              <p class="rules-list__text">
+                <span class="rules-list__num">12.2</span>
+                Sofern es sich bei dem Besteller um einen Kaufmann, eine juristische Person des öffentlichen Rechts oder um ein öffentlich-rechtliches Sondervermögen handelt, ist Gerichtsstand für alle Streitigkeiten aus Vertragsverhältnissen zwischen dem Besteller und den BBF der Sitz der BBF.
+              </p>
+              <p class="rules-list__text">
+                <span class="rules-list__num">12.3</span>
+                Der Vertrag bleibt auch bei rechtlicher Unwirksamkeit einzelner Punkte in seinen übrigen Teilen verbindlich. Anstelle der unwirksamen Punkte treten, soweit vorhanden, die gesetzlichen Vorschriften
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <div class="rules-list-on">Stand 03.06.2015</div>
+            </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="policeModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Datenschutzerklärung</h3>
+          <span class="modal-title_excerpt">Diese Datenschutzerklärung klärt über die Art, den Umfang und Zwecke der Erhebung und Verwendung von Daten der Besucher und Nutzer (nachfolgend zusammenfassend bezeichnet als „Nutzer“) durch BäderBetriebe Frankfurt GmbH, Am Hauptbahnhof 16, 60329 Frankfurt am Main (nachfolgend „Anbieter“) als datenschutzrechtlich verantwortliche Stelle auf.</span>
+        </div>
+        <div class="modal-body">
+          <ul class="rules-list">
+            <li class="rules-list__item">
+              <p class="rules-list__title">Verantwortliche Stelle</p>
+              <p class="rules-list__text">
+                Der Verantwortliche im Sinne der Datenschutz-Grundverordnung für die Verarbeitung personenbezogener Daten auf diesen Internetseiten ist die:
+                <br>
+                BäderBetriebe Frankfurt GmbH<br>
+                Am Hauptbahnhof 16<br>
+                60329 Frankfurt am Main<br>
+                E-Mail: <a class="rules-link" href="mailto: info@frankfurter-baeder.de">info@frankfurter-baeder.de</a><br>
+                Website: <a class="rules-link" href="www.frankfurter-baeder.de">www.frankfurter-baeder.de</a>
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">Datenschutzbeauftragter</p>
+              <p class="rules-list__text">
+                Sie erreichen unser betriebliches Datenschutzbeauftragten-Team unter: <br>
+                BäderBetriebe Frankfurt GmbH<br>
+                Am Hauptbahnhof 16<br>
+                60329 Frankfurt am Main<br>
+                E-Mail: <a class="rules-link" href="datenschutz@frankfurter-baeder.de">datenschutz@frankfurter-baeder.de</a>
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">Die für uns zuständige Datenschutzaufsichtsberhörde ist die: Hessische Beauftragte für Datenschutz und Informationsfreiheit</p>
+              <p class="rules-list__text">
+                Prof. Dr. Michael Ronellenfitsch
+                Presse- und Öffentlichkeitsarbeit
+                Gustav-Stresemann-Ring 1
+                65189 Wiesbaden
+                Telefon: 0611-1408 0
+                Telefax: 0611-1408 611
+                Website: <a class="rules-link" href="https://datenschutz.hessen.de/">https://datenschutz.hessen.de/</a>
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">Erhebung von Zugriffsdaten</p>
+              <p class="rules-list__text">
+                Der Anbieter erhebt Daten über jeden Zugriff auf das Onlineangebot (so genannte Serverlogfiles). Zu den Zugriffsdaten gehören Name der abgerufenen Webseite, Datei, Datum und Uhrzeit des Abrufs, übertragene Datenmenge, Meldung über erfolgreichen Abruf, Browsertyp nebst Version, das Betriebssystem des Nutzers, Referrer URL (die zuvor besuchte Seite), IP-Adresse und der anfragende Provider.  Der Anbieter verwendet die Protokolldaten ohne Zuordnung zur Person des Nutzersoder sonstiger Profilerstellung entsprechend den gesetzlichen Bestimmungen nur für statistische Auswertungen zum Zweck des Betriebs, der Sicherheit und der Optimierung des Onlineangebotes. Der Anbieter behält sich jedoch vor, die Protokolldaten nachträglich zu überprüfen, wenn aufgrund konkreter Anhaltspunkte der berechtigte Verdacht einer rechtswidrigen Nutzung besteht.
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">Erhebung und Nutzung personenbezogener Daten</p>
+              <p class="rules-list__text">
+                Personenbezogene Daten werden vom Anbieter nur dann erhoben und genutzt, wenn dies gesetzlich erlaubt ist oder die Nutzer in die Datenerhebung einwilligen. In der Regel ist es für die Nutzer bei der Nutzung des Dienstes erkennbar welche Daten gespeichert werden, so zum Beispiel Name, E-Mailadresse und Nachricht bei der Nutzung des Bestellformulars.  Die zum Zwecke der Bestellung von Waren angegebenen persönlichen Daten (wie zum Beispiel Name, E-Mail-Adresse, Anschrift, Zahlungsdaten) werden vom Verkäufer zur Erfüllung und Abwicklung des Vertrags verwendet. Diese Daten werden vertraulich behandelt, verschlüsselt übertragen und nicht an Dritte weitergegeben, die nicht am Bestell-, Auslieferungs- und Zahlungsvorgang beteiligt sind.  Bei der Kontaktaufnahme mit dem Anbieter (per Kontaktformular oder Email) werden die Angaben des Nutzers zwecks Bearbeitung der Anfrage sowie für den Fall, dass Anschlussfragen entstehen, gespeichert.  Der Anbieter hat organisatorische, vertragliche und technische Sicherheitsmaßnahmen getroffen, um sicher zu stellen, dass die Vorschriften der Datenschutzgesetze eingehalten werden und zufällige oder vorsätzliche Manipulationen, Verlust, Zerstörung oder der Zugriff unberechtigter Personen verhindert wird.
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">Datenweiterleitung an Dritte</p>
+              <p class="rules-list__text">
+                <span class="rules-list__num">7.1</span>
+                Der Versand von Gutscheinen erfolgt nach Vertragsschluss in elektronischer Form (über die Print at Home Funktion). Der Print-at-Home Gutschein ist nur lesbar und gültig, wenn er auf einem weißen DIN-A-4-Papier ausgedruckt wird. Von jedem Print-at-Home Gutschein darf nur ein Exemplar gedruckt werden. Es ist untersagt, der Print-at-Home Gutschein in digitaler oder in gedruckter Form zu vervielfältigen oder zu ändern. Der Print-at-Home Gutschein wird an der Kasse vor Ort von einem Barcode-Leser identifiziert, geprüft und in eine Transponderkarte umgetauscht. Der Barcode muss gut lesbar sein und ist nur einmal verwendbar.
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">Cookies</p>
+              <p class="rules-list__text">
+                Der Anbieter setzt im Rahmen seines Onlineangebotes „Cookies“ ein. Cookies sind kleine Dateien, die auf dem Computer der Nutzer abgelegt werden und Informationen für Anbieter speichern können. Temporäre Cookies werden nach dem Schließen des Browsers gelöscht, permanente Cookies bleiben für einen vorgegebenen Zeitraum erhalten und können beim erneuten Aufruf des Onlineangebotes die gespeicherten Informationen zur Verfügung stellen.  Cookies werden zum einen eingesetzt um die Nutzung des Dienstes zu erleichtern. So speichert ein Cookie den Warenkorbstatus eines Nutzers.  Der Nutzer kann auf den Einsatz der Cookies Einfluss nehmen. Die meisten Browser verfügen eine Option mit der das Speichern von Cookies eingeschränkt oder komplett verhindert wird. Anbieter bemüht sich das Onlineangebot so zu gestalten, dass der Einsatz von Cookies nicht notwendig ist. Allerdings wird darauf hingewiesen, dass die Nutzung und insbesondere der Nutzungskomfort ohne Cookies eingeschränkt werden.
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">Informationsversand per Newsletter</p>
+              <p class="rules-list__text">
+                E-Mails mit werblichen Informationen über den Anbieter sowie dessen Leistungen werden nur mit einer ausdrücklichen Einwilligung der Nutzer versendet. Die Nutzer können dem Empfang der Newsletter jederzeit widersprechen. Eine Widerspruchsmöglichkeit findet sich u.a. in jeder E-Mail.  Vor dem Versand des Newsletters geht dem E-Mail-Inhaber eine Bestätigungsemail zu, in welcher er die Newsletteranmeldung bestätigen muss. Nicht bestätigte Anmeldungen werden automatisch spätestens innerhalb von vier Wochen gelöscht.  Nicht zu werblichen Informationen gehören Nachrichten im Rahmen der Vertragsbeziehung mit dem Nutzer. Dazu gehört der Versand von technischen Informationen, Informationen zur Zahlungsabwicklung, Rückfragen zu Aufträgen und vergleichbare Nachrichten.  Die Nutzer können nachträglich die Austragung aus der Benachrichtigungsliste per E-Mail an die oben angegebenen Kontaktmöglichkeiten beantragen. Im Rahmen der Anmeldung speichert der Anbieter den Anmelde- sowie den Bestätigungszeitpunkt und die IP-Adresse des Nutzers. Der Anbieter ist gesetzlich verpflichtet die Anmeldungen zu protokollieren, um eine ordnungsgemäße Anmeldung nachweisen zu können.
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">Google Analytics</p>
+              <p class="rules-list__text">
+                Der Anbieter benutzt Google Analytics, einen Webanalysedienst der Google Inc. („Google“). Google Analytics verwendet sog. „Cookies“, Textdateien, die auf Computer der Nutzer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen. Die durch den Cookie erzeugten Informationen über Benutzung dieser Website durch die Nutzer werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert.  Im Falle der Aktivierung der IP-Anonymisierung auf dieser Webseite, wird die IP-Adresse der Nutzer von Google jedoch innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum zuvor gekürzt. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt. Die IP-Anonymisierung ist auf dieser Website aktiv. Im Auftrag des Betreibers dieser Website wird Google diese Informationen benutzen, um die Nutzung der Website durch die Nutzer auszuwerten, um Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber dem Websitebetreiber zu erbringen.  Die im Rahmen von Google Analytics von Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt. Die Nutzer können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; Der Anbieter weist die Nutzer jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können. Die Nutzer können darüber hinaus die Erfassung der durch das Cookie erzeugten und auf ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren:
+                <a class="rules-link" href="http://tools.google.com/dlpage/gaoptout?hl=de">http://tools.google.com/dlpage/gaoptout?hl=de</a>.
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">Verwendung von Facebook Social Plugins</p>
+              <p class="rules-list__text">
+                Auf diesem Onlineangebot werden Social Plugins (“Plugins”) des sozialen Netzwerkes facebook.com verwendet, welches von der Facebook Inc., 1601 S. California Ave, Palo Alto, CA 94304, USA betrieben wird (“Facebook”). Die Plugins sind an einem der Facebook Logos erkennbar (weißes „f“ auf blauer Kachel oder ein „Daumen hoch“-Zeichen) oder sind mit dem Zusatz “Facebook Social Plugin” gekennzeichnet. Die Liste und das Aussehen der Facebook Social Plugins kann hier eingesehen werden: https://developers.facebook.com/docs/plugins/. Wenn ein Nutzer eine Webseite dieses Onlineangebotes aufruft, die ein solches Plugin enthält, baut sein Browser eine direkte Verbindung mit den Servern von Facebook auf. Der Inhalt des Plugins wird von Facebook direkt an den Browser des Nutzers übermittelt und von dem Browser in die Webseite eingebunden. Der Anbieter hat daher keinen Einfluss auf den Umfang der Daten, die Facebook mit Hilfe dieses Plugins erhebt und informiert die Nutzer daher entsprechend ihrem Kenntnisstand: Durch die Einbindung der Plugins erhält Facebook die Information, dass ein Nutzer die entsprechende Seite des Onlineangebots aufgerufen hat. Ist der Nutzer bei Facebook eingeloggt, kann Facebook den Besuch seinem Facebook-Konto zuordnen. Wenn ein Nutzer mit den Plugins interagieren, zum Beispiel den Like Button betätigen oder einen Kommentar abgeben, wird die entsprechende Information von Ihrem Browser direkt an Facebook übermittelt und dort gespeichert. Falls ein Nutzer kein Mitglied von Facebook ist, besteht trotzdem die Möglichkeit, dass Facebook seine IP-Adresse in Erfahrung bringt und speichert. Laut Facebook wird in Deutschland nur eine anonymisierte IP-Adresse gespeichert. Zweck und Umfang der Datenerhebung und die weitere Verarbeitung und Nutzung der Daten durch Facebook sowie die diesbezüglichen Rechte und Einstellungsmöglichkeiten zum Schutz der Privatsphäre der Nutzer , können diese den Datenschutzhinweisen von Facebook entnehmen:
+                <a class="rules-link" href="https://www.facebook.com/about/privacy/">https://www.facebook.com/about/privacy/</a>. Wenn ein Nutzer Facebookmitglied ist und nicht möchte, dass Facebook über dieses Onlineangebot Daten über ihn sammelt und mit seinen bei Facebook gespeicherten Mitgliedsdaten verknüpft, muss er sich vor dem Besuch des Internetauftritts bei Facebook ausloggen und entsprechende Facebook-Cookies löschen. Ebenfalls ist es möglich Facebook-Social-Plugins mit Add-ons für den Browser zu blocken, zum Beispiel mit dem “Facebook Blocker”.
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">+1 Schaltfläche von Google+</p>
+              <p class="rules-list__text">
+                Auf diesem Onlineangebot werden die Schaltflächen des sozialen Netzwerkes Google+ verwendet (z.B. “+1″-Schaltfläche), welches von der Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States betrieben wird (“Google”). Wenn ein Nutzer eine Webseite dieses Onlineangebotes aufruft, die eine solche Schaltfläche enthält, baut der Browser eine direkte Verbindung mit den Servern von Google auf. Der Inhalt der Schaltflächen wird von Google direkt an seinen Browser übermittelt und von diesem in die Webseite eingebunden. Der Anbieter hat daher keinen Einfluss auf den Umfang der Daten, die Google mit den Schaltflächen erhebt. Laut Google werden ohne einen Klick auf die Schaltfläche keine personenbezogenen Daten erhoben. Nur bei eingeloggten Mitgliedern von Google+, werden solche Daten, unter anderem die IP-Adresse, erhoben und verarbeitet. Zweck und Umfang der Datenerhebung und die weitere Verarbeitung und Nutzung der Daten durch Google sowie die diesbezüglichen Rechte und Einstellungsmöglichkeiten der Nutzer zum Schutz Ihrer Privatsphäre können Googles Datenschutzhinweisen zu der “+1″-Schaltfläche entnommen werden:
+                <a class="rules-link" href="http://www.google.com/intl/de/+/policy/+1button.html">http://www.google.com/intl/de/+/policy/+1button.html</a> und der FAQ: <a class="rules-link" href="http://bit.ly/r3Qmer">http://bit.ly/r3Qmer</a>. Wenn ein Nutzer Google+ Mitglied ist und nicht möchte, dass Google über diesen Internetauftritt Daten über ihn sammelt und mit Ihren bei Google gespeicherten Mitgliedsdaten verknüpft, muss der Nutzer sich vor seinem Besuch dieses Internetauftritts bei Google Plus ausloggen und die zu Google gehörenden Cookies innerhalb des Browsers löschen.
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">Widerruf, Änderungen, Berichtigungen und Aktualisierungen</p>
+              <p class="rules-list__text">
+                Der Nutzer hat das Recht, auf Antrag unentgeltlich Auskunft zu erhalten über die personenbezogenen Daten, die vom Anbieter über ihn gespeichert wurden. Kontaktdaten finden sich im Impressum des Anbieters. Zusätzlich hat der Nutzer das Recht auf Berichtigung unrichtiger Daten, Sperrung und Löschung seiner personenbezogenen Daten, soweit keine gesetzliche Aufbewahrungspflicht entgegensteht.
+              </p>
+            </li>
+            <li class="rules-list__item">
+              <p class="rules-list__title">Änderungen der Datenschutzerklärung</p>
+              <p class="rules-list__text">
+                Der Anbieter behält sich vor, die Datenschutzerklärung zu ändern, um sie an geänderte Rechtslage oder bei Änderungen des Dienstes sowie der Datenverarbeitung anzupassen.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="js/libs.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+  <script src="js/common.js"></script>
+</body>
+</html>

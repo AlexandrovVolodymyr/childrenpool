@@ -1,0 +1,133 @@
+.instagram__container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 1rem; }
+
+.instagram .instagram-slider {
+  max-width: 815px;
+  margin: 65px auto; }
+  .instagram .instagram-slider__image, .instagram .instagram-slider__description {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%; }
+    @media screen and (max-width: 767px) {
+      .instagram .instagram-slider__image, .instagram .instagram-slider__description {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+        max-width: 100%; } }
+  .instagram .instagram-slider__image_top {
+    background-color: #e42a24;
+    border-top-left-radius: 6px;
+    color: #ffffff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding: 1rem; }
+    @media screen and (max-width: 767px) {
+      .instagram .instagram-slider__image_top {
+        border-radius: 0; } }
+    .instagram .instagram-slider__image_top_hashtag {
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+      text-decoration: none; }
+    .instagram .instagram-slider__image_top i {
+      font-size: 24px;
+      margin-right: 1rem; }
+  .instagram .instagram-slider__image_pic img {
+    width: 100%;
+    border-bottom-left-radius: 6px;
+    max-height: 305px;
+    -o-object-fit: cover;
+       object-fit: cover; }
+    @media screen and (max-width: 767px) {
+      .instagram .instagram-slider__image_pic img {
+        border-radius: 0; } }
+  .instagram .instagram-slider-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+
+.instagram .instagram-description {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 40px;
+  min-height: 440px; }
+  @media screen and (max-width: 767px) {
+    .instagram .instagram-description {
+      padding: 1rem;
+      min-height: 1px; } }
+  .instagram .instagram-description__row {
+    border-bottom: 1px solid #f7f6f6;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 25px; }
+    @media screen and (max-width: 767px) {
+      .instagram .instagram-description__row {
+        padding: 1rem 0; } }
+  .instagram .instagram-description__avatar {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem; }
+    .instagram .instagram-description__avatar img {
+      border-radius: 50%;
+      width: 100%; }
+  .instagram .instagram-description__login {
+    color: #000;
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    text-decoration: none; }
+  .instagram .instagram-description__quotes {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+    max-height: 200px;
+    word-break: break-word;
+    padding: 25px 15px;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis; }
+    @media screen and (max-width: 767px) {
+      .instagram .instagram-description__quotes {
+        padding: 1rem 0;
+        max-height: 250px; } }
+    .instagram .instagram-description__quotes .instagram-description__login {
+      margin-right: 5px; }
+  .instagram .instagram-description__hashtag {
+    color: #e42a24;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px; }

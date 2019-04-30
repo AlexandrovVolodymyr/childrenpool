@@ -1,0 +1,468 @@
+/* CONTENT MAIN PAGE */
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .content__container {
+    width: 1260px;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+    @media screen and (max-width: 1276px) {
+      .content__container {
+        width: 100%; } }
+    @media screen and (max-width: 991px) {
+      .content__container {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; } }
+    @media screen and (max-width: 767px) {
+      .content__container {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; } }
+  .content-main {
+    background: #e1e1e2 url("../img/mobile-note.png") no-repeat right top/80%;
+    height: 508px;
+    position: relative; }
+    @media screen and (max-width: 580px) {
+      .content-main {
+        height: 196px;
+        background-size: 70%; } }
+  .content-main-wrapper {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(100% - 301px);
+            flex: 0 0 calc(100% - 301px);
+    width: calc(100% - 301px);
+    max-width: calc(100% - 301px); }
+    @media screen and (max-width: 991px) {
+      .content-main-wrapper {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+        max-width: 100%; } }
+    @media screen and (max-width: 767px) {
+      .content-main-wrapper {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+        max-width: 100%; } }
+  .content-side {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 301px;
+            flex: 0 0 301px;
+    max-width: 301px; }
+    @media screen and (max-width: 991px) {
+      .content-side {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 1rem; } }
+    @media screen and (max-width: 767px) {
+      .content-side {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 1rem; } }
+  .content .program {
+    padding-top: 102px;
+    padding-left: 40px; }
+    @media screen and (max-width: 580px) {
+      .content .program {
+        padding-left: 16px;
+        padding-top: 20px; } }
+    .content .program__text {
+      color: #1c1b1a;
+      font-family: "Proxima Nova", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 34.31px;
+      text-transform: uppercase;
+      letter-spacing: 0.16px; }
+      @media screen and (max-width: 580px) {
+        .content .program__text {
+          font-size: 9px;
+          font-weight: 700;
+          line-height: 19.6px;
+          text-transform: uppercase;
+          letter-spacing: 0.16px; } }
+    .content .program__title {
+      color: #1c1b1a;
+      font-family: "Proxima Nova Semibold", sans-serif;
+      font-size: 55px;
+      font-weight: 400;
+      line-height: 55px;
+      text-transform: uppercase;
+      letter-spacing: 0.55px; }
+      @media screen and (max-width: 1199px) {
+        .content .program__title {
+          font-size: 42px;
+          line-height: 40px; } }
+      @media screen and (max-width: 580px) {
+        .content .program__title {
+          font-size: 24px;
+          font-weight: 400;
+          line-height: 24px;
+          text-transform: uppercase;
+          letter-spacing: 0.42px; } }
+    .content .program__days {
+      color: #1c1b1a;
+      font-family: "Proxima Nova", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px; }
+      @media screen and (max-width: 580px) {
+        .content .program__days {
+          font-size: 9px;
+          font-weight: 400;
+          line-height: 19.6px; } }
+    .content .program__time-number {
+      color: #1c1b1a;
+      font-family: "Proxima Nova Semibold", sans-serif;
+      font-size: 16px;
+      line-height: 34.31px; }
+      @media screen and (max-width: 580px) {
+        .content .program__time-number {
+          font-size: 9px;
+          font-weight: 700;
+          line-height: 19.6px; } }
+    .content .program__time-region {
+      color: #1c1b1a;
+      font-family: "Proxima Nova", sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 34.31px; }
+      @media screen and (max-width: 580px) {
+        .content .program__time-region {
+          font-size: 9px;
+          font-weight: 300;
+          line-height: 19.6px; } }
+    .content .program__call {
+      margin-top: 38px; }
+      @media screen and (max-width: 580px) {
+        .content .program__call {
+          margin-top: 15px; } }
+      .content .program__call-text {
+        color: #ea5419;
+        font-family: "Proxima Nova", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 34.31px;
+        text-transform: uppercase;
+        letter-spacing: 0.18px; }
+        @media screen and (max-width: 580px) {
+          .content .program__call-text {
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 19.6px;
+            text-transform: uppercase;
+            letter-spacing: 0.18px; } }
+      .content .program__call-number {
+        color: #1c1b1a;
+        font-family: "Proxima Nova", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 34.31px; }
+        @media screen and (max-width: 580px) {
+          .content .program__call-number {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 19.6px; } }
+  .content .content-promo {
+    border: 1px solid #ebece4;
+    background-color: #ffffff;
+    padding: 23px 38px; }
+    @media screen and (max-width: 1276px) {
+      .content .content-promo {
+        padding: 1rem; } }
+    @media screen and (max-width: 580px) {
+      .content .content-promo {
+        display: none; } }
+    .content .content-promo__text {
+      color: #1c1b1a;
+      font-family: "Proxima Nova", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px; }
+      .content .content-promo__text:nth-child(1), .content .content-promo__text:nth-child(2) {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 200px;
+                flex: 0 0 200px;
+        max-width: 200px;
+        min-width: 200px; }
+        @media screen and (max-width: 1276px) {
+          .content .content-promo__text:nth-child(1), .content .content-promo__text:nth-child(2) {
+            -webkit-box-flex: 0;
+                -ms-flex: 0 0 175px;
+                    flex: 0 0 175px;
+            max-width: 175px;
+            min-width: 175px; } }
+        @media screen and (max-width: 1199px) {
+          .content .content-promo__text:nth-child(1), .content .content-promo__text:nth-child(2) {
+            -webkit-box-flex: 0;
+                -ms-flex: 0 0 25%;
+                    flex: 0 0 25%;
+            max-width: 25%;
+            min-width: 25%;
+            padding: 0 0.25rem; } }
+      .content .content-promo__text:nth-child(3) {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 250px;
+                flex: 0 0 250px;
+        max-width: 250px;
+        min-width: 250px; }
+        @media screen and (max-width: 1276px) {
+          .content .content-promo__text:nth-child(3) {
+            -webkit-box-flex: 0;
+                -ms-flex: 0 0 175px;
+                    flex: 0 0 175px;
+            max-width: 175px;
+            min-width: 175px; } }
+        @media screen and (max-width: 1199px) {
+          .content .content-promo__text:nth-child(3) {
+            -webkit-box-flex: 0;
+                -ms-flex: 0 0 25%;
+                    flex: 0 0 25%;
+            max-width: 25%;
+            min-width: 25%;
+            padding: 0 0.25rem; } }
+      .content .content-promo__text:nth-child(4) {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 200px;
+                flex: 0 0 200px;
+        max-width: 200px;
+        min-width: 200px; }
+        @media screen and (max-width: 1276px) {
+          .content .content-promo__text:nth-child(4) {
+            -webkit-box-flex: 0;
+                -ms-flex: 0 0 175px;
+                    flex: 0 0 175px;
+            max-width: 175px;
+            min-width: 175px; } }
+        @media screen and (max-width: 1199px) {
+          .content .content-promo__text:nth-child(4) {
+            -webkit-box-flex: 0;
+                -ms-flex: 0 0 25%;
+                    flex: 0 0 25%;
+            max-width: 25%;
+            min-width: 25%;
+            padding: 0 0.25rem; } }
+  @media screen and (max-width: 991px) {
+    .content .content-side {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start; } }
+  .content .content-side__congratulation {
+    background: #f3f3f3 url(../img/surprise.png) no-repeat right bottom;
+    height: 250px;
+    padding: 20px 24px; }
+    @media screen and (max-width: 991px) {
+      .content .content-side__congratulation {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+        max-width: 50%; } }
+    @media screen and (max-width: 580px) {
+      .content .content-side__congratulation {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+        max-width: 100%; } }
+  .content .content-side .congratulation .slick-arrow {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    width: 11px;
+    height: 7px; }
+  .content .content-side .congratulation .slick-next {
+    top: 10px; }
+  .content .content-side .congratulation .slick-prev {
+    top: auto;
+    bottom: 2.5px;
+    left: auto; }
+  .content .content-side .congratulation__day {
+    color: #ea5419;
+    font-family: "Proxima Nova Semibold", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px; }
+  .content .content-side .congratulation__title {
+    color: #1c1b1a;
+    font-family: "Proxima Nova Semibold", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 22px;
+    max-width: 170px;
+    padding-top: 6px; }
+    @media screen and (max-width: 991px) {
+      .content .content-side .congratulation__title {
+        max-width: 100%; } }
+    @media screen and (max-width: 767px) {
+      .content .content-side .congratulation__title {
+        max-width: 100%; } }
+  .content .content-side .congratulation .congratulation-list {
+    margin-top: 30px; }
+    .content .content-side .congratulation .congratulation-list__item {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      height: 25px; }
+      .content .content-side .congratulation .congratulation-list__item svg {
+        cursor: pointer;
+        width: 12px;
+        height: 13px; }
+      .content .content-side .congratulation .congratulation-list__item--text {
+        color: #1c1b1a;
+        display: inline-block;
+        font-family: "Proxima Nova", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.35px;
+        margin-left: 0.5rem; }
+      .content .content-side .congratulation .congratulation-list__item:hover .congratulation-list__item--text {
+        color: #ea5419;
+        text-decoration: none; }
+      .content .content-side .congratulation .congratulation-list__item:hover svg {
+        stroke: #ea5419; }
+
+.content-promo-mobile {
+  border: 1px solid #ebece4;
+  display: none; }
+  .content-promo-mobile__text {
+    border-right: 1px solid #edecee;
+    color: #1c1b1a;
+    font-family: "Proxima Nova", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    height: 110px;
+    width: 250px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    float: left;
+    position: relative;
+    margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
+    padding: 0 25px; }
+    .content-promo-mobile__text span {
+      display: inline-block; }
+  @media screen and (max-width: 580px) {
+    .content-promo-mobile {
+      display: block; } }
+
+.congratModal .modal-dialog {
+  margin-top: 50px; }
+  @media screen and (max-width: 767px) {
+    .congratModal .modal-dialog {
+      margin: 1rem auto; } }
+  @media screen and (max-width: 450px) {
+    .congratModal .modal-dialog {
+      margin: 1rem; } }
+
+.congratModal .modal-content {
+  padding: 1rem; }
+  @media screen and (max-width: 767px) {
+    .congratModal .modal-content {
+      padding: 0; } }
+
+.congratModal .modal-body {
+  padding-left: 0;
+  padding-right: 0; }
+  @media screen and (max-width: 767px) {
+    .congratModal .modal-body {
+      padding-left: 1rem;
+      padding-right: 1rem; } }
+
+.congratModal .modal-header {
+  background: #ea5419;
+  position: relative; }
+  .congratModal .modal-header__text {
+    font-size: 20px;
+    font-family: "Proxima Nova", sans-serif;
+    color: white;
+    text-transform: uppercase;
+    line-height: 1.71;
+    text-align: center;
+    width: 100%; }
+    @media screen and (max-width: 767px) {
+      .congratModal .modal-header__text {
+        font-size: 14px; } }
+
+.congratModal .close {
+  opacity: 1;
+  position: absolute;
+  right: 1rem;
+  top: 1rem; }
+
+.congratModal .congratulation__text {
+  font-size: 20px;
+  font-family: "Proxima Nova", sans-serif;
+  color: #000;
+  margin: 35px 0 25px; }
+  @media screen and (max-width: 767px) {
+    .congratModal .congratulation__text {
+      font-size: 14px; } }
+  .congratModal .congratulation__text-name {
+    color: #ea5419; }
+
+.congratModal .congratulation__send {
+  background: #ea5419;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 20px;
+  font-family: "Proxima Nova", sans-serif;
+  display: inline-block;
+  text-align: center;
+  margin: 25px auto;
+  padding: 1rem 2rem;
+  text-transform: uppercase; }
+  .congratModal .congratulation__send:hover {
+    text-decoration: none; }
+  @media screen and (max-width: 767px) {
+    .congratModal .congratulation__send {
+      font-size: 14px;
+      padding: 0.5rem 1rem; } }
+
+.congratModal .congratulation textarea {
+  border: 1px solid #efefef;
+  border-radius: 2px;
+  font-size: 16px;
+  font-family: "Proxima Nova", sans-serif;
+  color: black;
+  width: 100%;
+  height: 170px;
+  resize: none;
+  padding: 1rem; }

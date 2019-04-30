@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="css/libs.min.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-16x16.icon">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-32x32.icon">
+
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#000">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#000">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+</head>
+
+<body class="body">
+  <!-- person-registration -->
+  <section class="pr-section visitors-section">
+    <div class="container">
+      <div class="logo">
+        <a class="logo__link" href="#"><img src="img/logo.png" class="logo__image" alt="logo"></a>
+      </div>
+      <div class="pr">
+        <a href="#" class="btn-add">You can registration visitor if you need</a>
+
+        <form class="pr-form visitors-form" id="visitors-form" novalidate>
+          <div class="current-form" id="current-form">
+            <div class="pr-form__row">
+              <label class="pr__text">Vorname*</label>
+              <input type="text" class="pr__input first-name-input" placeholder="Vorname"
+                     name="firstName"
+                     required="required"
+                     data-validation="length"
+                     data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                     data-validation-length="1-50">
+            </div>
+            <div class="pr-form__row">
+              <label class="pr__text">Nachname*</label>
+              <input type="text" class="pr__input last-name-input" placeholder="Nachname"
+                     name="lastName"
+                     required="required"
+                     data-validation="length"
+                     data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                     data-validation-length="1-50">
+            </div>
+            <div class="pr-form__row">
+              <label class="pr__text">Geburtstag*</label>
+              <input type="text" class="pr__input birth-date-input" placeholder="YYYY-MM-DD"
+                     name="birthDate"
+                     required="required"
+                     data-validation="birthdate"
+                     data-validation-help="Keine Daten in der Zukunft oder älter als 120 Jahre"
+                     data-validation-min="14"
+                     data-validation-max="25"
+                     data-validation-error-msg="Sie haben kein korrektes Datum angegeben"
+                     data-validation-format="yyyy-mm-dd">
+            </div>
+            <div class="pr-form__row">
+              <label class="pr__text">Mail Adresse*</label>
+              <input type="text" placeholder="Mail" class="pr__input email-input"
+                     name="email"
+                     data-validation="email"
+                     data-validation-error-msg="Sie haben keine korrekte E-Mail-Adresse angegeben"
+                     required="required">
+            </div>
+            <div class="pr-form__row select-gender">
+              <label for="sex2" class="pr__text">Anrede*</label>
+              <select name="sex" id="sex2" class="pr__input pr__select sex-input"
+                      required="required">
+                <option value="0" selected>Herr</option>
+                <option value="1">Frau</option>
+                <option value="2">Divers</option>
+              </select>
+            </div>
+            <div class="pr-form__row current-address">
+              <label class="pr__text">Stadt*</label>
+              <input type="text" placeholder="Stadt" class="pr__input"
+                     name="address[city]"
+                     required="required"
+                     data-validation="length"
+                     data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                     data-validation-length="1-50">
+            </div>
+            <div class="pr-form__row current-address">
+              <label class="pr__text">Straße<span>*</span></label>
+              <input type="text" placeholder="Straße" class="pr__input"
+                     name="address[street]"
+                     required="required"
+                     data-validation="length"
+                     data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                     data-validation-length="1-50">
+            </div>
+            <div class="pr-form__row current-address">
+              <label class="pr__text">Haus<span>*</span></label>
+              <input type="text" placeholder="Haus" class="pr__input"
+                     name="address[house]"
+                     required="required"
+                     data-validation="length"
+                     data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                     data-validation-length="1-50">
+            </div>
+            <div class="pr-form__row current-address">
+              <label class="pr__text">Postleitzahl<span>*</span></label>
+              <input type="text" class="postcode-input pr__input" placeholder="Postleitzahl"
+                     name="address[postcode]"
+                     data-validation="number"
+                     data-validation-allowing="float"
+                     data-validation-error-msg="Sie haben keine korrekte Nummer angegeben"
+                     required="required">
+            </div>
+            <div class="pr-form__row swimmers">
+              <label class="pr__text">Swimmers</label>
+              <div class="swimmers-status" id="swimmers-status">
+                <div class="pretty p-default p-curve swimmers-true">
+                  <input type="radio" name="swimmer"
+                         data-validation="required"
+                         data-validation-error-msg="Sie müssen einen Schwimmer wählen oder nicht"/>
+                  <div class="state p-info-o">
+                    <label>
+                      <span class="swimmers__text">Yes</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="pretty p-default p-curve swimmers-false">
+                  <input type="radio" name="swimmer"
+                         data-validation="required"
+                         data-validation-error-msg="Sie müssen einen Schwimmer wählen oder nicht"/>
+                  <div class="state p-info-o">
+                    <label>
+                      <span class="swimmers__text">No</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pr-form__row swimmers-category">
+              <label class="pr__text">Kategorie</label>
+              <input type="text" class="swimmers-category-input pr__input" placeholder="Kategorie"
+                     name="swimmerClass"
+                     data-validation="length"
+                     data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                     data-validation-length="1-50">
+            </div>
+          </div>
+
+          <div class="created-form"></div>
+
+          <div class="pr-form__row terms">
+            <div class="terms-first">
+              <div class="pretty p-default p-curve">
+                <input type="checkbox" name="terms" data-validation="required"
+                       data-validation-error-msg="Sie müssen unseren Allgemeinen Geschäftsbedingungen zustimmen"/>
+                <div class="state p-info">
+                  <label>
+                    <a href="" class="terms__text" data-toggle="modal" data-target="#exampleModal">Geschäftsbedingungen*</a>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="terms-second">
+              <div class="pretty p-default p-curve">
+                <input type="checkbox" name="police" data-validation="required"
+                       data-validation-error-msg="Sie müssen unserer Datenschutzerklärung zustimmen"/>
+                <div class="state p-info">
+                  <label>
+                    <a href="" class="terms__text" data-toggle="modal" data-target="#exampleModal">Datenschutz-Bestimmungen*</a>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="terms-third">
+              <div class="pretty p-default p-curve">
+                <input type="checkbox" name="parent" data-validation="required"
+                       data-validation-error-msg="Bist du ein Elternteil?"/>
+                <div class="state p-info">
+                  <label>
+                    <a href="" class="terms__text">Elternteil*</a>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pr-form__row">
+            <input type="submit" value="Senden" class="btn-info pr-form-submit">
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- person-registration -->
+
+  <script src="js/libs.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/visitors.js"></script>
+</body>
+</html>
