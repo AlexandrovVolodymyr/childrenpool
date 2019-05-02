@@ -794,6 +794,10 @@ ul.gj-list-md {
     font-family: Oswald-Regular, sans-serif;
     font-size: 14px;
     line-height: 1; }
+    .pr__text_into {
+      display: inline-block;
+      margin-right: 15px;
+      width: 50px; }
     @media screen and (max-width: 575px) {
       .pr__text {
         -webkit-box-flex: 0;
@@ -812,6 +816,23 @@ ul.gj-list-md {
     .pr__input:focus {
       -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
               box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4); }
+    .pr__input.street-input {
+      width: 200px;
+      margin-left: auto; }
+    .pr__input.house-input {
+      width: 105px;
+      margin-left: 15px; }
+    .pr__input.birth-date-input {
+      width: 290px;
+      -webkit-transform: translateX(-30px);
+          -ms-transform: translateX(-30px);
+              transform: translateX(-30px); }
+    .pr__input.city-input {
+      width: 200px; }
+    .pr__input.postcode-input {
+      width: 105px;
+      margin-left: auto;
+      margin-right: 15px; }
     @media screen and (max-width: 575px) {
       .pr__input {
         -webkit-box-flex: 0;
@@ -885,7 +906,7 @@ ul.gj-list-md {
       margin: 0; }
       @media screen and (max-width: 575px) {
         .pr-form__row .form-error {
-          top: 68px;
+          top: 62px;
           left: 0;
           bottom: unset; } }
       @media screen and (max-width: 344px) {
@@ -923,6 +944,14 @@ ul.gj-list-md {
   cursor: pointer; }
   @media screen and (max-width: 767px) {
     .select-gender select {
+      background-size: 12.5px; } }
+
+.select-course select {
+  background: url(../img/select.svg) no-repeat 95% 0;
+  background-size: 5%;
+  cursor: pointer; }
+  @media screen and (max-width: 767px) {
+    .select-course select {
       background-size: 12.5px; } }
 
 .terms {
@@ -1178,21 +1207,31 @@ ul.gj-list-md {
   #termsModal .rules-link:hover, #termsModal .rules-link:focus, #policeModal .rules-link:hover, #policeModal .rules-link:focus {
     color: #00559d; }
 
-.children__title {
-  font-size: 21px;
-  font-family: Oswald-Regular, sans-serif;
-  font-weight: bold;
-  margin-bottom: 15px; }
+.children {
+  display: none; }
+  .children__title {
+    font-size: 21px;
+    font-family: Oswald-Regular, sans-serif;
+    font-weight: bold;
+    margin-bottom: 15px; }
 
 .children-table {
   font-size: 16px; }
-  .children-table thead {
-    background-color: #eeeeee; }
-    .children-table thead td {
-      font-family: Oswald-Regular, sans-serif; }
+  .children-table thead td {
+    font-family: Oswald-Regular, sans-serif; }
   .children-table tbody td {
+    border-bottom: 1px solid #eee;
     font-size: 14px;
     font-family: Ubuntu, sans-serif; }
+
+@media screen and (max-width: 575px) {
+  .gj-datepicker-md {
+    width: 100%; }
+    .gj-datepicker-md .form-error {
+      top: 38px !important; } }
+
+.gj-datepicker-md img {
+  max-width: 25px; }
 
 .visitors-section {
   padding-top: 15px;
@@ -1312,9 +1351,9 @@ ul.gj-list-md {
 
 .swimmers-status {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 220px;
-          flex: 0 0 220px;
-  max-width: 220px;
+      -ms-flex: 0 0 320px;
+          flex: 0 0 320px;
+  max-width: 320px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1329,10 +1368,22 @@ ul.gj-list-md {
     .swimmers-status .pretty:last-child {
       margin-right: 0; }
   .swimmers-status .help-block {
-    right: 35px; }
+    right: -65px; }
 
 #visitors-form {
   display: none; }
+  #visitors-form .pr__input.postcode-input,
+  #visitors-form .pr__input.house-input,
+  #visitors-form .pr__input.street-input,
+  #visitors-form .pr__input.city-input {
+    margin-left: unset;
+    margin-right: unset;
+    width: 320px; }
+  #visitors-form .pr-form-submit {
+    width: 320px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
 
 * {
   -webkit-box-sizing: border-box;
@@ -1399,7 +1450,7 @@ h1, h2, h3 {
 
 .gj-datepicker-md [role="right-icon"] {
   top: 50%;
-  right: 25px;
+  right: 0;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%); }

@@ -97,8 +97,8 @@
 		justify-content: space-between
 		z-index: auto
 .swimmers-status
-	flex: 0 0 220px
-	max-width: 220px
+	flex: 0 0 320px
+	max-width: 320px
 	display: flex
 	justify-content: flex-end
 	align-items: center
@@ -107,7 +107,18 @@
 		&:last-child
 			margin-right: 0
 	.help-block
-		right: 35px
+		right: -65px
 		
 #visitors-form
 	display: none
+	.pr__input.postcode-input,
+	.pr__input.house-input,
+	.pr__input.street-input,
+	.pr__input.city-input
+		margin-left: unset
+		margin-right: unset
+		width: 320px
+	.pr-form-submit
+		width: 320px
+		justify-content: center
+		

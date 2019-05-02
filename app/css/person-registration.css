@@ -62,6 +62,10 @@
     font-family: Oswald-Regular, sans-serif;
     font-size: 14px;
     line-height: 1; }
+    .pr__text_into {
+      display: inline-block;
+      margin-right: 15px;
+      width: 50px; }
     @media screen and (max-width: 575px) {
       .pr__text {
         -webkit-box-flex: 0;
@@ -80,6 +84,23 @@
     .pr__input:focus {
       -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
               box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4); }
+    .pr__input.street-input {
+      width: 200px;
+      margin-left: auto; }
+    .pr__input.house-input {
+      width: 105px;
+      margin-left: 15px; }
+    .pr__input.birth-date-input {
+      width: 290px;
+      -webkit-transform: translateX(-30px);
+          -ms-transform: translateX(-30px);
+              transform: translateX(-30px); }
+    .pr__input.city-input {
+      width: 200px; }
+    .pr__input.postcode-input {
+      width: 105px;
+      margin-left: auto;
+      margin-right: 15px; }
     @media screen and (max-width: 575px) {
       .pr__input {
         -webkit-box-flex: 0;
@@ -153,7 +174,7 @@
       margin: 0; }
       @media screen and (max-width: 575px) {
         .pr-form__row .form-error {
-          top: 68px;
+          top: 62px;
           left: 0;
           bottom: unset; } }
       @media screen and (max-width: 344px) {
@@ -191,6 +212,14 @@
   cursor: pointer; }
   @media screen and (max-width: 767px) {
     .select-gender select {
+      background-size: 12.5px; } }
+
+.select-course select {
+  background: url(../img/select.svg) no-repeat 95% 0;
+  background-size: 5%;
+  cursor: pointer; }
+  @media screen and (max-width: 767px) {
+    .select-course select {
       background-size: 12.5px; } }
 
 .terms {
@@ -446,18 +475,28 @@
   #termsModal .rules-link:hover, #termsModal .rules-link:focus, #policeModal .rules-link:hover, #policeModal .rules-link:focus {
     color: #00559d; }
 
-.children__title {
-  font-size: 21px;
-  font-family: Oswald-Regular, sans-serif;
-  font-weight: bold;
-  margin-bottom: 15px; }
+.children {
+  display: none; }
+  .children__title {
+    font-size: 21px;
+    font-family: Oswald-Regular, sans-serif;
+    font-weight: bold;
+    margin-bottom: 15px; }
 
 .children-table {
   font-size: 16px; }
-  .children-table thead {
-    background-color: #eeeeee; }
-    .children-table thead td {
-      font-family: Oswald-Regular, sans-serif; }
+  .children-table thead td {
+    font-family: Oswald-Regular, sans-serif; }
   .children-table tbody td {
+    border-bottom: 1px solid #eee;
     font-size: 14px;
     font-family: Ubuntu, sans-serif; }
+
+@media screen and (max-width: 575px) {
+  .gj-datepicker-md {
+    width: 100%; }
+    .gj-datepicker-md .form-error {
+      top: 38px !important; } }
+
+.gj-datepicker-md img {
+  max-width: 25px; }

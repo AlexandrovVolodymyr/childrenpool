@@ -42,7 +42,7 @@
             </select>
           </div>
           <div class="pr-form__row">
-            <label class="pr__text">Vorname<span>*</span></label>
+            <label class="pr__text">Vorname</label>
             <input type="text" class="pr__input first-name-input" placeholder="Vorname"
                    name="firstName"
                    required="required"
@@ -51,7 +51,7 @@
                    data-validation-length="1-25">
           </div>
           <div class="pr-form__row">
-            <label class="pr__text">Nachname*</label>
+            <label class="pr__text">Nachname</label>
             <input type="text" class="pr__input last-name-input" placeholder="Nachname"
                    name="lastName"
                    required="required"
@@ -60,35 +60,38 @@
                    data-validation-length="1-25">
           </div>
           <div class="pr-form__row current-address">
-            <label class="pr__text">Stadt*</label>
-            <input type="text" placeholder="Stadt" class="pr__input city-input"
-                   name="city"
-                   required="required"
-                   data-validation="length"
-                   data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
-                   data-validation-length="1-50">
-          </div>
-          <div class="pr-form__row current-address">
-            <label class="pr__text">Straße<span>*</span></label>
-            <input type="text" placeholder="Straße" class="pr__input street-input"
+            <label class="pr__text"><span class="pr__text_into">Strasse</span>Nr.</label>
+            <input type="text" placeholder="Strasse" class="pr__input street-input"
                    name="street"
                    required="required"
                    data-validation="length"
                    data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
                    data-validation-length="1-50">
-          </div>
-          <div class="pr-form__row current-address">
-            <label class="pr__text">Haus<span>*</span></label>
-            <input type="text" placeholder="Haus" class="pr__input house-input"
+            <input type="text" placeholder="Nr." class="pr__input house-input"
                    name="house"
                    required="required"
                    data-validation="length"
                    data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
                    data-validation-length="1-50">
           </div>
+          <div class="pr-form__row current-address">
+            <label class="pr__text"><span class="pr__text_into">PLZ</span>Wohnort</label>
+            <input type="text" placeholder="PLZ" class="pr__input postcode-input"
+                   name="postcode"
+                   data-validation="number"
+                   data-validation-allowing="float"
+                   data-validation-error-msg="Sie haben keine korrekte Nummer angegeben"
+                   required="required">
+            <input type="text" placeholder="Wohnort" class="pr__input city-input"
+                   name="city"
+                   required="required"
+                   data-validation="length"
+                   data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                   data-validation-length="1-50">
+          </div>
           <div class="pr-form__row">
-            <label class="pr__text">Geburtstag<span>*</span></label>
-            <input id="datepicker" class="pr__input hasDatepicker birth-date-input" placeholder="Geburtstag"
+            <label class="pr__text">Geburtstag</label>
+            <input id="datepicker" class="pr__input hasDatepicker birth-date-input" placeholder="TT.MM.YYYY"
                    data-attr="birth-date-input"
                    data-validation-error-msg="Sie haben kein korrektes Datum angegeben"
                    data-validation="required">
@@ -101,20 +104,19 @@
                    <!--data-validation-format="yyyy-mm-dd">-->
           </div>
           <div class="pr-form__row">
-            <label class="pr__text">Mail Adresse<span>*</span></label>
-            <input type="text" class="pr__input email-input" placeholder="Mail"
+            <label class="pr__text">Mailadresse</label>
+            <input type="text" class="pr__input email-input email-confirm" placeholder="Mailadresse muster.mail@frankfurt.de"
                    name="email"
                    data-validation="email"
                    data-validation-error-msg="Sie haben keine korrekte E-Mail-Adresse angegeben"
                    required="required">
           </div>
-          <div class="pr-form__row current-address">
-            <label class="pr__text">Postleitzahl<span>*</span></label>
-            <input type="text" class="pr__input postcode-input" placeholder="Postleitzahl"
-                   name="postcode"
-                   data-validation="number"
-                   data-validation-allowing="float"
-                   data-validation-error-msg="Sie haben keine korrekte Nummer angegeben"
+          <div class="pr-form__row">
+            <label class="pr__text">Mailadresse wieder</label>
+            <input type="text" class="pr__input email-input-suggest" placeholder="Mailadresse muster.mail@frankfurt.de"
+                   name="repeat"
+                   data-validation="confirmation"
+                   data-validation-confirm="email"
                    required="required">
           </div>
           <div class="pr-form__row terms">
@@ -204,7 +206,7 @@
         </div>
         <div class="children">
           <div class="children__title">Erfasste Kinder:</div>
-          <table class="table children-table">
+          <table class="table table-striped children-table">
             <thead>
               <tr>
                 <td>Vorname</td>
@@ -213,21 +215,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Nina</td>
-                <td>Keller</td>
-                <td>01.01.1980</td>
-              </tr>
-              <tr>
-                <td>Paul</td>
-                <td>Keller</td>
-                <td>01.01.1980</td>
-              </tr>
             </tbody>
           </table>
         </div>
 
-        <a href="#" class="btn-add">You can add visitor information</a>
+        <a href="#" class="btn-add">Sie können Informationen über den Besucher hinzufügen</a>
         <div class="visitors-wrapper"></div>
       </section>
 
@@ -392,7 +384,6 @@
       </div>
     </div>
   </div>
-
   <div class="modal fade" id="policeModal" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
@@ -510,8 +501,6 @@
       </div>
     </div>
   </div>
-
-
 
   <script src="js/libs.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>

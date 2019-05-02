@@ -116,9 +116,9 @@
 
 .swimmers-status {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 220px;
-          flex: 0 0 220px;
-  max-width: 220px;
+      -ms-flex: 0 0 320px;
+          flex: 0 0 320px;
+  max-width: 320px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -133,7 +133,19 @@
     .swimmers-status .pretty:last-child {
       margin-right: 0; }
   .swimmers-status .help-block {
-    right: 35px; }
+    right: -65px; }
 
 #visitors-form {
   display: none; }
+  #visitors-form .pr__input.postcode-input,
+  #visitors-form .pr__input.house-input,
+  #visitors-form .pr__input.street-input,
+  #visitors-form .pr__input.city-input {
+    margin-left: unset;
+    margin-right: unset;
+    width: 320px; }
+  #visitors-form .pr-form-submit {
+    width: 320px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }

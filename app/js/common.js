@@ -1,11 +1,23 @@
 $(document).ready(function() {
-  $("input[data-attr='birth-date-input']").datepicker();
+  /*create datepicker*/
+  function createDatepicker() {
+    $("input[data-attr='birth-date-input']").datepicker({
+      format: 'dd.mm.yyyy',
+      icons: {
+        rightIcon: '<img src="http://localhost:3000/img/calendar-alt-regular.svg">'
+      }
+    });
+  }
+  createDatepicker();
+  /*create datepicker*/
+
   /*valid*/
   function validForm() {
     // $('.birth-date-input').mask('0000-00-00');
+    $('.birth-date-input').mask('00.00.0000');
     $(".postcode-input").mask("#");
     $.validate({
-      modules : 'date'
+      modules : 'security, date'
     });
     $('.pretty').addClass('has-success');
   }
@@ -24,7 +36,7 @@ $(document).ready(function() {
       }
     });
   }
-  swimmersStatus();
+  // swimmersStatus();
   /*swimmer / nonswimmer ?*/
 
   /*send request post to reg 1*/
@@ -92,6 +104,7 @@ $(document).ready(function() {
       contentType: 'application/json',
       dataType: 'json',
       complete: function (response) {
+        console.log(response);
         if (response.status !== 200) {
           alert('Sie haben falsche Daten eingegeben or Server antwortet nicht');
         } else {
@@ -128,8 +141,17 @@ $(document).ready(function() {
       $(this).addClass('disabled');
       const newFormTemplate = `<form class="pr-form" id="visitors-form" novalidate>
             <div class="current-form" id="current-form">
+              <div class="pr-form__row select-gender">
+                <label for="sex" class="pr__text">Anrede</label>
+                <select name="sex" id="sex" class="pr__input pr__select"
+                        required="required">
+                  <option value="0" selected>Herr</option>
+                  <option value="1">Frau</option>
+                  <option value="2">Divers</option>
+                </select>
+              </div>
               <div class="pr-form__row">
-                <label class="pr__text">Vorname*</label>
+                <label class="pr__text">Vorname</label>
                 <input type="text" class="pr__input first-name-input" placeholder="Vorname"
                        name="firstName"
                        required="required"
@@ -138,20 +160,13 @@ $(document).ready(function() {
                        data-validation-length="1-25">
               </div>
               <div class="pr-form__row">
-                <label class="pr__text">Nachname*</label>
+                <label class="pr__text">Nachname</label>
                 <input type="text" class="pr__input last-name-input" placeholder="Nachname"
                        name="lastName"
                        required="required"
                        data-validation="length"
                        data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
                        data-validation-length="1-25">
-              </div>
-              <div class="pr-form__row">
-                <label class="pr__text">Geburtstag*</label>
-                <input id="datepicker2" class="pr__input hasDatepicker birth-date-input" placeholder="Geburtstag"
-                   data-attr="birth-date-input"
-                   data-validation-error-msg="Sie haben kein korrektes Datum angegeben"
-                   data-validation="required">
               </div>
               <div class="pr-form__row">
                 <label class="pr__text">Mail Adresse*</label>
@@ -161,27 +176,9 @@ $(document).ready(function() {
                        data-validation-error-msg="Sie haben keine korrekte E-Mail-Adresse angegeben"
                        required="required">
               </div>
-              <div class="pr-form__row select-gender">
-                <label for="sex2" class="pr__text">Anrede*</label>
-                <select name="sex" id="sex2" class="pr__input pr__select sex-input"
-                        required="required">
-                  <option value="0" selected>Herr</option>
-                  <option value="1">Frau</option>
-                  <option value="2">Divers</option>
-                </select>
-              </div>
               <div class="pr-form__row current-address">
-                <label class="pr__text">Stadt*</label>
-                <input type="text" placeholder="Stadt" class="pr__input city-input"
-                       name="city"
-                       required="required"
-                       data-validation="length"
-                       data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
-                       data-validation-length="1-50">
-              </div>
-              <div class="pr-form__row current-address">
-                <label class="pr__text">Straße<span>*</span></label>
-                <input type="text" placeholder="Straße" class="pr__input street-input"
+                <label class="pr__text">Strasse</label>
+                <input type="text" placeholder="Strasse" class="pr__input street-input"
                        name="street"
                        required="required"
                        data-validation="length"
@@ -189,8 +186,8 @@ $(document).ready(function() {
                        data-validation-length="1-50">
               </div>
               <div class="pr-form__row current-address">
-                <label class="pr__text">Haus<span>*</span></label>
-                <input type="text" placeholder="Haus" class="pr__input house-input"
+                <label class="pr__text"><span class="pr__text_into">Hausnummer</span></label>
+                <input type="text" placeholder="Hausnummer" class="pr__input house-input"
                        name="house"
                        required="required"
                        data-validation="length"
@@ -198,13 +195,29 @@ $(document).ready(function() {
                        data-validation-length="1-50">
               </div>
               <div class="pr-form__row current-address">
-                <label class="pr__text">Postleitzahl<span>*</span></label>
+                <label class="pr__text">Postleitzahl</label>
                 <input type="text" placeholder="Postleitzahl" class="pr__input postcode-input"
                        name="postcode"
                        data-validation="number"
                        data-validation-allowing="float"
                        data-validation-error-msg="Sie haben keine korrekte Nummer angegeben"
                        required="required">
+              </div>
+              <div class="pr-form__row current-address">
+                <label class="pr__text">Wohnort</label>
+                <input type="text" placeholder="Wohnort" class="pr__input city-input"
+                       name="city"
+                       required="required"
+                       data-validation="length"
+                       data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                       data-validation-length="1-50">
+              </div>
+              <div class="pr-form__row">
+                <label class="pr__text">Geburtstag</label>
+                <input id="datepicker2" class="pr__input hasDatepicker birth-date-input" placeholder="DD.MM.YYYY"
+                   data-attr="birth-date-input"
+                   data-validation-error-msg="Sie haben kein korrektes Datum angegeben"
+                   data-validation="required">
               </div>
               <div class="pr-form__row swimmers">
                 <label class="pr__text">Swimmers</label>
@@ -215,7 +228,7 @@ $(document).ready(function() {
                            data-validation-error-msg="Sie müssen einen Schwimmer wählen oder nicht"/>
                     <div class="state p-info-o">
                       <label>
-                        <span class="swimmers__text">Yes</span>
+                        <span class="swimmers__text">Ja</span>
                       </label>
                     </div>
                   </div>
@@ -225,20 +238,29 @@ $(document).ready(function() {
                            data-validation-error-msg="Sie müssen einen Schwimmer wählen oder nicht"/>
                     <div class="state p-info-o">
                       <label>
-                        <span class="swimmers__text">No</span>
+                        <span class="swimmers__text">Nein</span>
                       </label>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="pr-form__row swimmers-category">
-                <label class="pr__text">Kategorie</label>
-                <input type="text" class="swimmers-category-input pr__input" placeholder="Kategorie"
-                       name="swimmerClass"
-                       data-validation="length"
-                       data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
-                       data-validation-length="1-50">
+              <div class="pr-form__row select-course">
+                <label for="course" class="pr__text">Schwimmkurs besucht</label>
+                <select name="course" id="course" class="pr__input pr__select course-input"
+                        required="required">
+                  <option value="0" selected>Nein</option>
+                  <option value="1">Ja bei BBF</option>
+                  <option value="2">Ja anderer Anbieter</option>
+                </select>
               </div>
+              <!--<div class="pr-form__row swimmers-category">-->
+                <!--<label class="pr__text">Kategorie</label>-->
+                <!--<input type="text" class="swimmers-category-input pr__input" placeholder="Kategorie"-->
+                       <!--name="swimmerClass"-->
+                       <!--data-validation="length"-->
+                       <!--data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"-->
+                       <!--data-validation-length="1-50">-->
+              <!--</div>-->
             </div>
   
             <div class="created-form"></div>
@@ -250,7 +272,7 @@ $(document).ready(function() {
                          data-validation-error-msg="Sie müssen unseren Allgemeinen Geschäftsbedingungen zustimmen"/>
                   <div class="state p-info">
                     <label>
-                      <a href="" class="terms__text" data-toggle="modal" data-target="#exampleModal">Geschäftsbedingungen*</a>
+                      <a href="" class="terms__text" data-toggle="modal" data-target="#termsModal">Akzeptiere Allgemeine Geschäftsbedingungen*</a>
                     </label>
                   </div>
                 </div>
@@ -261,7 +283,7 @@ $(document).ready(function() {
                          data-validation-error-msg="Sie müssen unserer Datenschutzerklärung zustimmen"/>
                   <div class="state p-info">
                     <label>
-                      <a href="" class="terms__text" data-toggle="modal" data-target="#exampleModal">Datenschutz-Bestimmungen*</a>
+                      <a href="" class="terms__text" data-toggle="modal" data-target="#policeModal">Akzeptiere Datenschutz Bestimmungen*</a>
                     </label>
                   </div>
                 </div>
@@ -272,24 +294,33 @@ $(document).ready(function() {
                          data-validation-error-msg="Bist du ein Elternteil?"/>
                   <div class="state p-info">
                     <label>
-                      <a href="" class="terms__text">Elternteil*</a>
+                      <a href="javascript:;" class="terms__text">Ich bin erziehungsberechtigter Elternteil*</a>
                     </label>
                   </div>
                 </div>
               </div>
             </div>
             <div class="pr-form__row">
-              <input type="submit" value="Senden" class="btn-info pr-form-submit">
+              <input type="submit" value="Weiteres Kind" class="btn-info pr-form-submit">
             </div>
           </form>`;
       const currVisForm = $('.visitors-wrapper').html(newFormTemplate).find('#visitors-form');
 
-      $('body').find('.email-input').val(visitorsFormEmail.text());
+      if (visitorsFormEmail !== '') {
+        $('body').find('.email-input').val(visitorsFormEmail.text());
+      }
+
+      $("input[data-attr='birth-date-input']").datepicker({
+        format: 'dd.mm.yyyy',
+        icons: {
+          rightIcon: '<img src="http://localhost:3000/img/calendar-alt-regular.svg">'
+        }
+      });
       currVisForm.fadeIn();
 
       visitsFormSubmit(currVisForm);
       validForm();
-      swimmersStatus();
+      // swimmersStatus();
     });
   }
 
@@ -298,14 +329,18 @@ $(document).ready(function() {
     currVisForm.submit(function(e) {
       e.preventDefault();
       let dob = $('body').find('.birth-date-input').val();
-      dob = dob.split('-');
+
+      dob = dob.split('.');
       let born = new Date(dob[0] + '-' +  dob[1] + '-' + dob[2]);
       function getAge(born, now) {
         let birthday = new Date(now.getFullYear(), born.getMonth(), born.getDate());
-        if (now >= birthday)
+        if (now >= birthday) {
+          console.log('now >= birthday', now.getFullYear() - born.getFullYear());
           return now.getFullYear() - born.getFullYear();
-        else
+        } else {
+          console.log('!now >= birthday', now.getFullYear() - born.getFullYear());
           return now.getFullYear() - born.getFullYear() - 1;
+        }
       }
       const now = new Date();
       let age = getAge(born, now);
@@ -322,7 +357,7 @@ $(document).ready(function() {
             "postcode": currVisForm.find('.postcode-input').val()
           },
           "swimmer": currVisForm.find('.swimmer').val(),
-          "swimmerClass": currVisForm.find('.swimmerClass').val()
+          "swimmerClass": currVisForm.find('.course').val()
         }];
         data = JSON.stringify(data);
         $.ajax({
@@ -340,10 +375,14 @@ $(document).ready(function() {
               body.find('.btn-add').removeClass('disabled');
               body.find('#visitors-form').fadeOut();
               body.find('.visitors-answer').fadeIn();
+              let row = `<tr><td>${body.find('#visitors-form .first-name-input').val()}</td><td>${body.find('#visitors-form .last-name-input').val()}</td>${body.find('#visitors-form .birth-date-input').val()}</tr>`
               setTimeout(() => {
                 $('.body').find('#visitors-form').remove();
                 body.find('.visitors-answer').hide();
-              }, 3500);
+                $('.children-table tbody').append(row);
+              }, 1500);
+              $('.children').show();
+
             }
           }
         });
@@ -351,7 +390,7 @@ $(document).ready(function() {
         $('.age-answer').show();
 
         setTimeout(() => {
-          $('.age-answer').remove();
+          $('.age-answer').hide();
         }, 2000);
       }
 

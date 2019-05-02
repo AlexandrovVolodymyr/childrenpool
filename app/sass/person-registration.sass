@@ -1,7 +1,6 @@
 @import 'vars'
 
 .pr-section
-	//height: 100vh
 	padding: 15px
 	.container
 		display: flex
@@ -53,6 +52,10 @@
 		font-family: $font
 		font-size: 14px
 		line-height: 1
+		&_into
+			display: inline-block
+			margin-right: 15px
+			width: 50px
 		@media screen and (max-width: 575px)
 			flex: 0 0 100%
 			max-width: 100%
@@ -69,6 +72,21 @@
 		padding: 5px 15px
 		&:focus
 			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4)
+		&.street-input
+			width: 200px
+			margin-left: auto
+		&.house-input
+			width: 105px
+			margin-left: 15px
+		&.birth-date-input
+			width: 290px
+			transform: translateX(-30px)
+		&.city-input
+			width: 200px
+		&.postcode-input
+			width: 105px
+			margin-left: auto
+			margin-right: 15px
 		@media screen and (max-width: 575px)
 			flex: 0 0 100%
 			max-width: 100%
@@ -121,7 +139,7 @@
 			right: 0
 			margin: 0
 			@media screen and (max-width: 575px)
-				top: 68px
+				top: 62px
 				left: 0
 				bottom: unset
 			@media screen and (max-width: 344px)
@@ -152,7 +170,6 @@
 			border-radius: 0
 			color: #fff
 			
-				
 .select-gender
 	select
 		background: url('../img/select.svg') no-repeat 95% 0
@@ -161,7 +178,14 @@
 		cursor: pointer
 		@media screen and (max-width: 767px)
 			background-size: 12.5px
-	
+.select-course
+	select
+		background: url(../img/select.svg) no-repeat 95% 0
+		background-size: 5%
+		cursor: pointer
+		@media screen and (max-width: 767px)
+			background-size: 12.5px
+			
 .terms
 	flex-wrap: wrap
 	margin-bottom: 15px
@@ -371,6 +395,7 @@
 			color: $color-modal-title
 
 .children
+	display: none
 	&__title
 		font-size: 21px
 		font-family: $font
@@ -380,10 +405,19 @@
 .children-table
 	font-size: 16px
 	thead
-		background-color: #eeeeee
 		td
 			font-family: $font
 	tbody
 		td
+			border-bottom: 1px solid #eee
 			font-size: 14px
 			font-family: $font-ubuntu
+			
+
+.gj-datepicker-md
+	@media screen and (max-width: 575px)
+		width: 100%
+		.form-error
+			top: 38px !important
+	img
+		max-width: 25px
