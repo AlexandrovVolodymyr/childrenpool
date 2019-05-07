@@ -15,8 +15,8 @@
         -ms-flex-pack: center;
             justify-content: center;
     height: 100%;
-    min-height: 100vh; }
-    @media screen and (max-width: 575px) {
+    min-height: calc(100vh - 30px); }
+    @media screen and (max-width: 700px) {
       .pr-section .container {
         padding-left: 0;
         padding-right: 0; } }
@@ -66,7 +66,7 @@
       display: inline-block;
       margin-right: 15px;
       width: 50px; }
-    @media screen and (max-width: 575px) {
+    @media screen and (max-width: 700px) {
       .pr__text {
         -webkit-box-flex: 0;
             -ms-flex: 0 0 100%;
@@ -85,23 +85,75 @@
       -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
               box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4); }
     .pr__input.street-input {
-      width: 200px;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 200px;
+              flex: 0 0 200px;
+      max-width: 200px;
       margin-left: auto; }
+      @media screen and (max-width: 700px) {
+        .pr__input.street-input {
+          -webkit-box-flex: 0;
+              -ms-flex: 0 0 70%;
+                  flex: 0 0 70%;
+          max-width: 70%;
+          margin-left: 0; } }
     .pr__input.house-input {
-      width: 105px;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 105px;
+              flex: 0 0 105px;
+      max-width: 105px;
       margin-left: 15px; }
+      @media screen and (max-width: 700px) {
+        .pr__input.house-input {
+          -webkit-box-flex: 0;
+              -ms-flex: 0 0 calc(30% - 15px);
+                  flex: 0 0 calc(30% - 15px);
+          max-width: calc(30% - 15px); } }
     .pr__input.birth-date-input {
-      width: 290px;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 290px;
+              flex: 0 0 290px;
+      max-width: 290px;
       -webkit-transform: translateX(-30px);
           -ms-transform: translateX(-30px);
               transform: translateX(-30px); }
+      @media screen and (max-width: 700px) {
+        .pr__input.birth-date-input {
+          -webkit-box-flex: 0;
+              -ms-flex: 0 0 calc(100% - 35px);
+                  flex: 0 0 calc(100% - 35px);
+          max-width: calc(100% - 35px);
+          -webkit-transform: translateX(0);
+              -ms-transform: translateX(0);
+                  transform: translateX(0); } }
+      @supports (-webkit-overflow-scrolling: touch) {
+        .pr__input.birth-date-input {
+          min-height: 36px; } }
     .pr__input.city-input {
-      width: 200px; }
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 200px;
+              flex: 0 0 200px;
+      max-width: 200px; }
+      @media screen and (max-width: 700px) {
+        .pr__input.city-input {
+          -webkit-box-flex: 0;
+              -ms-flex: 0 0 70%;
+                  flex: 0 0 70%;
+          max-width: 70%; } }
     .pr__input.postcode-input {
-      width: 105px;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 105px;
+              flex: 0 0 105px;
+      max-width: 105px;
       margin-left: auto;
       margin-right: 15px; }
-    @media screen and (max-width: 575px) {
+      @media screen and (max-width: 700px) {
+        .pr__input.postcode-input {
+          -webkit-box-flex: 0;
+              -ms-flex: 0 0 calc(30% - 15px);
+                  flex: 0 0 calc(30% - 15px);
+          max-width: calc(30% - 15px); } }
+    @media screen and (max-width: 700px) {
       .pr__input {
         -webkit-box-flex: 0;
             -ms-flex: 0 0 100%;
@@ -126,7 +178,7 @@
   width: 550px;
   margin: auto;
   padding: 15px; }
-  @media screen and (max-width: 575px) {
+  @media screen and (max-width: 700px) {
     .pr-form {
       width: 100%;
       padding-left: 0;
@@ -147,7 +199,7 @@
     position: relative; }
     .pr-form__row:last-child {
       margin-bottom: 0; }
-    @media screen and (max-width: 575px) {
+    @media screen and (max-width: 700px) {
       .pr-form__row {
         margin-bottom: 30px; } }
     .pr-form__row span.help {
@@ -158,7 +210,7 @@
       bottom: -23px;
       max-width: 180px;
       line-height: 1; }
-      @media screen and (max-width: 575px) {
+      @media screen and (max-width: 700px) {
         .pr-form__row span.help {
           display: none !important; } }
     .pr-form__row .form-error {
@@ -180,7 +232,7 @@
       @media screen and (max-width: 344px) {
         .pr-form__row .form-error {
           font-size: 11px; } }
-  @media screen and (max-width: 575px) {
+  @media screen and (max-width: 700px) {
     .pr-form address {
       width: 100%; } }
   .pr-form address input {
@@ -205,6 +257,14 @@
     .pr-form-submit:hover, .pr-form-submit:focus {
       border-radius: 0;
       color: #fff; }
+
+@media screen and (max-width: 700px) {
+  .current-address .pr__text_into {
+    width: 70%; } }
+
+@media screen and (max-width: 700px) {
+  .current-address .pr__text_into_last {
+    width: calc(30% - 15px); } }
 
 .select-gender select {
   background: url("../img/select.svg") no-repeat 95% 0;
@@ -276,7 +336,7 @@
   width: 450px;
   margin: auto;
   padding: 15px; }
-  @media screen and (max-width: 575px) {
+  @media screen and (max-width: 700px) {
     .token-form {
       width: 100%;
       padding-left: 0;
@@ -316,7 +376,7 @@
     font-size: 14px;
     line-height: 1;
     margin-bottom: 15px; }
-    @media screen and (max-width: 575px) {
+    @media screen and (max-width: 700px) {
       .token-form__label {
         margin-bottom: 10px; } }
   .token-form__submit {
@@ -399,6 +459,9 @@
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   padding: 50px; }
+  @media screen and (max-width: 700px) {
+    .visitors-answer, .age-answer {
+      padding: 25px; } }
   .visitors-answer__message, .age-answer__message {
     font-family: Oswald-Regular, sans-serif;
     font-size: 18px; }
@@ -492,7 +555,7 @@
     font-size: 14px;
     font-family: Ubuntu, sans-serif; }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 700px) {
   .gj-datepicker-md {
     width: 100%; }
     .gj-datepicker-md .form-error {
@@ -500,3 +563,12 @@
 
 .gj-datepicker-md img {
   max-width: 25px; }
+
+.can-authorize {
+  padding-top: 50px;
+  text-align: center; }
+  .can-authorize__link {
+    color: #ccc;
+    font-family: Oswald-Regular, sans-serif; }
+    .can-authorize__link:hover, .can-authorize__link:focus {
+      color: #333; }

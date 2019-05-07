@@ -12,6 +12,7 @@
 		min-height: 100vh
 		
 .visitors-wrapper
+	margin-top: 15px
 	.terms
 		margin-top: 30px
 		
@@ -108,7 +109,11 @@
 			margin-right: 0
 	.help-block
 		right: -65px
-		
+		@media screen and (max-width: 700px)
+			right: unset
+			left: 0
+			top: 15px
+
 #visitors-form
 	display: none
 	.pr__input.postcode-input,
@@ -117,7 +122,11 @@
 	.pr__input.city-input
 		margin-left: unset
 		margin-right: unset
-		width: 320px
+		flex: 0 0 320px
+		max-width: 320px
+		@media screen and (max-width: 700px)
+			flex: 0 0 100%
+			max-width: 100%
 	.pr-form-submit
 		width: 320px
 		justify-content: center

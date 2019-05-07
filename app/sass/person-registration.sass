@@ -8,8 +8,8 @@
 		align-items: center
 		justify-content: center
 		height: 100%
-		min-height: 100vh
-		@media screen and (max-width: 575px)
+		min-height: calc(100vh - 30px)
+		@media screen and (max-width: 700px)
 			padding-left: 0
 			padding-right: 0
 		
@@ -56,7 +56,7 @@
 			display: inline-block
 			margin-right: 15px
 			width: 50px
-		@media screen and (max-width: 575px)
+		@media screen and (max-width: 700px)
 			flex: 0 0 100%
 			max-width: 100%
 			margin-bottom: 10px
@@ -73,21 +73,50 @@
 		&:focus
 			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4)
 		&.street-input
-			width: 200px
+			flex: 0 0 200px
+			max-width: 200px
 			margin-left: auto
+			@media screen and (max-width: 700px)
+				flex: 0 0 70%
+				max-width: 70%
+				margin-left: 0
 		&.house-input
-			width: 105px
+			flex: 0 0 105px
+			max-width: 105px
 			margin-left: 15px
+			@media screen and (max-width: 700px)
+				flex: 0 0 calc(30% - 15px)
+				max-width: calc(30% - 15px)
 		&.birth-date-input
-			width: 290px
+			flex: 0 0 290px
+			max-width: 290px
 			transform: translateX(-30px)
+			@media screen and (max-width: 700px)
+				flex: 0 0 calc(100% - 35px)
+				max-width: calc(100% - 35px)
+				transform: translateX(0)
+			@supports (-webkit-overflow-scrolling: touch)
+				//flex: 0 0 100%
+				//max-width: 100%
+				min-height: 36px
 		&.city-input
-			width: 200px
+			flex: 0 0 200px
+			max-width: 200px
+			@media screen and (max-width: 700px)
+				flex: 0 0 70%
+				max-width: 70%
 		&.postcode-input
-			width: 105px
+			flex: 0 0 105px
+			max-width: 105px
 			margin-left: auto
 			margin-right: 15px
-		@media screen and (max-width: 575px)
+			@media screen and (max-width: 700px)
+				flex: 0 0 calc(30% - 15px)
+				max-width: calc(30% - 15px)
+			
+		//@media screen and (max-width: 700px)
+		//	width: 320px
+		@media screen and (max-width: 700px)
 			flex: 0 0 100%
 			max-width: 100%
 			width: 100%
@@ -104,7 +133,7 @@
 	width: 550px
 	margin: auto
 	padding: 15px
-	@media screen and (max-width: 575px)
+	@media screen and (max-width: 700px)
 		width: 100%
 		padding-left: 0
 		padding-right: 0
@@ -117,7 +146,7 @@
 		position: relative
 		&:last-child
 			margin-bottom: 0
-		@media screen and (max-width: 575px)
+		@media screen and (max-width: 700px)
 			margin-bottom: 30px
 		span.help
 			font-family: $font
@@ -127,7 +156,7 @@
 			bottom: -23px
 			max-width: 180px
 			line-height: 1
-			@media screen and (max-width: 575px)
+			@media screen and (max-width: 700px)
 				display: none !important
 		.form-error
 			display: block
@@ -145,7 +174,7 @@
 			@media screen and (max-width: 344px)
 				font-size: 11px
 	address
-		@media screen and (max-width: 575px)
+		@media screen and (max-width: 700px)
 			width: 100%
 		input
 			margin-bottom: 10px
@@ -169,6 +198,14 @@
 			-moz-border-radius: 0
 			border-radius: 0
 			color: #fff
+
+.current-address
+	.pr__text_into
+		@media screen and (max-width: 700px)
+			width: 70%
+		&_last
+			@media screen and (max-width: 700px)
+				width: calc(30% - 15px)
 			
 .select-gender
 	select
@@ -226,7 +263,7 @@
 	width: 450px
 	margin: auto
 	padding: 15px
-	@media screen and (max-width: 575px)
+	@media screen and (max-width: 700px)
 		width: 100%
 		padding-left: 0
 		padding-right: 0
@@ -255,7 +292,7 @@
 		font-size: 14px
 		line-height: 1
 		margin-bottom: 15px
-		@media screen and (max-width: 575px)
+		@media screen and (max-width: 700px)
 			margin-bottom: 10px
 	&__submit
 		-webkit-border-radius: 4px
@@ -330,10 +367,13 @@
 	-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75)
 	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75)
 	padding: 50px
+	@media screen and (max-width: 700px)
+		padding: 25px
 	&__message
 		font-family: $font
 		font-size: 18px
 		
+
 #termsModal, #policeModal
 	.modal-header
 		flex-direction: column
@@ -415,9 +455,18 @@
 			
 
 .gj-datepicker-md
-	@media screen and (max-width: 575px)
+	@media screen and (max-width: 700px)
 		width: 100%
 		.form-error
 			top: 38px !important
 	img
 		max-width: 25px
+		
+.can-authorize
+	padding-top: 50px
+	text-align: center
+	&__link
+		color: #ccc
+		font-family: $font
+		&:hover, &:focus
+			color: #333

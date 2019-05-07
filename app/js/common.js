@@ -4,7 +4,7 @@ $(document).ready(function() {
     $("input[data-attr='birth-date-input']").datepicker({
       format: 'dd.mm.yyyy',
       icons: {
-        rightIcon: '<img src="http://localhost:3000/img/calendar-alt-regular.svg">'
+        rightIcon: '<img src="img/calendar-alt-regular.svg">'
       }
     });
   }
@@ -94,6 +94,16 @@ $(document).ready(function() {
   });
   /*token form*/
 
+  $('.can-authorize__link').on('click', function(e) {
+    e.preventDefault();
+    form.toggle();
+    setTimeout(function() {
+      form.next().remove();
+      form.remove();
+      tokenForm.fadeIn();
+    }, 1000);
+  });
+
   /*get token, customer*/
   function getToken() {
     const token = $('.token-form__input').val();
@@ -104,7 +114,6 @@ $(document).ready(function() {
       contentType: 'application/json',
       dataType: 'json',
       complete: function (response) {
-        console.log(response);
         if (response.status !== 200) {
           alert('Sie haben falsche Daten eingegeben or Server antwortet nicht');
         } else {
@@ -201,6 +210,7 @@ $(document).ready(function() {
                        data-validation="number"
                        data-validation-allowing="float"
                        data-validation-error-msg="Sie haben keine korrekte Nummer angegeben"
+                       maxlength="5"
                        required="required">
               </div>
               <div class="pr-form__row current-address">
@@ -214,7 +224,7 @@ $(document).ready(function() {
               </div>
               <div class="pr-form__row">
                 <label class="pr__text">Geburtstag</label>
-                <input id="datepicker2" class="pr__input hasDatepicker birth-date-input" placeholder="DD.MM.YYYY"
+                <input id="datepicker2" class="pr__input hasDatepicker birth-date-input" placeholder="DD.MM.JJJJ"
                    data-attr="birth-date-input"
                    data-validation-error-msg="Sie haben kein korrektes Datum angegeben"
                    data-validation="required">
@@ -272,7 +282,7 @@ $(document).ready(function() {
                          data-validation-error-msg="Sie müssen unseren Allgemeinen Geschäftsbedingungen zustimmen"/>
                   <div class="state p-info">
                     <label>
-                      <a href="" class="terms__text" data-toggle="modal" data-target="#termsModal">Akzeptiere Allgemeine Geschäftsbedingungen*</a>
+                      <a href="https://www.frankfurter-baeder.de/agb/" target="_blank" class="terms__text">Akzeptiere Allgemeine Geschäftsbedingungen*</a>
                     </label>
                   </div>
                 </div>
@@ -283,7 +293,7 @@ $(document).ready(function() {
                          data-validation-error-msg="Sie müssen unserer Datenschutzerklärung zustimmen"/>
                   <div class="state p-info">
                     <label>
-                      <a href="" class="terms__text" data-toggle="modal" data-target="#policeModal">Akzeptiere Datenschutz Bestimmungen*</a>
+                      <a href="https://www.frankfurter-baeder.de/datenschutzerklaerung/" target="_blank" class="terms__text">Akzeptiere Datenschutz Bestimmungen*</a>
                     </label>
                   </div>
                 </div>
@@ -313,7 +323,7 @@ $(document).ready(function() {
       $("input[data-attr='birth-date-input']").datepicker({
         format: 'dd.mm.yyyy',
         icons: {
-          rightIcon: '<img src="http://localhost:3000/img/calendar-alt-regular.svg">'
+          rightIcon: '<img src="img/calendar-alt-regular.svg">'
         }
       });
       currVisForm.fadeIn();

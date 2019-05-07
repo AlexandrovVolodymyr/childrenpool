@@ -11,8 +11,10 @@
     height: 100%;
     min-height: 100vh; }
 
-.visitors-wrapper .terms {
-  margin-top: 30px; }
+.visitors-wrapper {
+  margin-top: 15px; }
+  .visitors-wrapper .terms {
+    margin-top: 30px; }
 
 .adds-form {
   border: 2px dotted #ccc;
@@ -134,6 +136,11 @@
       margin-right: 0; }
   .swimmers-status .help-block {
     right: -65px; }
+    @media screen and (max-width: 700px) {
+      .swimmers-status .help-block {
+        right: unset;
+        left: 0;
+        top: 15px; } }
 
 #visitors-form {
   display: none; }
@@ -143,7 +150,19 @@
   #visitors-form .pr__input.city-input {
     margin-left: unset;
     margin-right: unset;
-    width: 320px; }
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 320px;
+            flex: 0 0 320px;
+    max-width: 320px; }
+    @media screen and (max-width: 700px) {
+      #visitors-form .pr__input.postcode-input,
+      #visitors-form .pr__input.house-input,
+      #visitors-form .pr__input.street-input,
+      #visitors-form .pr__input.city-input {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+        max-width: 100%; } }
   #visitors-form .pr-form-submit {
     width: 320px;
     -webkit-box-pack: center;
