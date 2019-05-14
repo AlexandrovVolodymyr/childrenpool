@@ -60,7 +60,7 @@
                    data-validation-length="1-25">
           </div>
           <div class="pr-form__row current-address">
-            <label class="pr__text"><span class="pr__text_into">Strasse</span>Nr.</label>
+            <label class="pr__text"><span class="pr__text_into">Strasse<span>*</span></span>Nr.<span>*</span></label>
             <input type="text" placeholder="Strasse" class="pr__input street-input"
                    name="street"
                    required="required"
@@ -75,7 +75,7 @@
                    data-validation-length="1-50">
           </div>
           <div class="pr-form__row current-address">
-            <label class="pr__text"><span class="pr__text_into pr__text_into_last">PLZ</span>Wohnort</label>
+            <label class="pr__text"><span class="pr__text_into pr__text_into_last">PLZ<span>*</span></span>Wohnort<span>*</span></label>
             <input type="text" placeholder="PLZ" class="pr__input postcode-input"
                    name="postcode"
                    data-validation="number"
@@ -90,7 +90,7 @@
                    data-validation-length="1-50">
           </div>
           <div class="pr-form__row">
-            <label class="pr__text">Geburtstag</label>
+            <label class="pr__text">Geburtstag<span>*</span></label>
             <input id="datepicker" class="pr__input hasDatepicker birth-date-input" placeholder="TT.MM.JJJJ"
                    data-attr="birth-date-input"
                    data-validation-error-msg="Sie haben kein korrektes Datum angegeben"
@@ -104,16 +104,16 @@
                    <!--data-validation-format="yyyy-mm-dd">-->
           </div>
           <div class="pr-form__row">
-            <label class="pr__text">Mailadresse</label>
-            <input type="text" class="pr__input email-input email-confirm" placeholder="Mailadresse muster.mail@frankfurt.de"
+            <label class="pr__text">Mailadresse<span>*</span></label>
+            <input type="text" class="pr__input email-input email-confirm" placeholder="hans.muster@frankfurt.de"
                    name="email"
                    data-validation="email"
                    data-validation-error-msg="Sie haben keine korrekte E-Mail-Adresse angegeben"
                    required="required">
           </div>
           <div class="pr-form__row">
-            <label class="pr__text">Mailadresse wieder</label>
-            <input type="text" class="pr__input email-input-suggest" placeholder="Mailadresse muster.mail@frankfurt.de"
+            <label class="pr__text">Mailadresse bestätigen<span>*</span></label>
+            <input type="text" class="pr__input email-input-suggest" placeholder="hans.muster@frankfurt.de"
                    name="repeat"
                    data-validation="confirmation"
                    data-validation-confirm="email"
@@ -126,8 +126,10 @@
                        data-validation="required"
                        data-validation-error-msg="Sie müssen unseren Allgemeinen Geschäftsbedingungen zustimmen"/>
                 <div class="state p-info">
-                  <label>
-                    <a href="https://www.frankfurter-baeder.de/agb/" target="_blank" class="terms__text">Allgemeine Geschäftsbedingungen<span>*</span></a>
+                  <label class="pr__text pr__text_label">
+                    Ich akzeptiere die
+                    <a href="https://www.frankfurter-baeder.de/agb/" target="_blank" class="pr__text pr__text_link"> Allgemeine Geschäftsbedingungen<span>*</span></a>
+                    der BäderBetriebe Frankfurt GmbH.
                   </label>
                 </div>
               </div>
@@ -138,8 +140,22 @@
                        data-validation="required"
                        data-validation-error-msg="Sie müssen unserer Datenschutzerklärung zustimmen"/>
                 <div class="state p-info">
-                  <label>
-                    <a href="https://www.frankfurter-baeder.de/datenschutzerklaerung/" target="_blank" class="terms__text">Datenschutz-Bestimmungen<span>*</span></a>
+                  <label class="pr__text pr__text_label">Ich akzeptiere die
+                    <a href="https://www.frankfurter-baeder.de/datenschutzerklaerung/" target="_blank" class="pr__text pr__text_link"> Datenschutz-Bestimmungen<span>*</span></a>
+                    der BäderBetriebe Frankfurt GmbH zur Kenntnis genommen.
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="terms-third">
+              <div class="pretty p-default p-curve">
+                       <!--data-validation="required"-->
+                <input type="checkbox" name="advertising" class="terms-input"
+                       data-validation-error-msg="Wenn Sie von unseren Angeboten per Mail profitieren möchten klicken Sie hier."/>
+                <div class="state p-info">
+                  <label class="pr__text pr__text_label">Ich stimme der
+                    <a href="https://www.frankfurter-baeder.de/agb/" target="_blank" class="pr__text pr__text_link">Einwilligungserklärung</a>
+                    zum Erhalt von E-Mails mit Informationen und Angeboten der BäderBetriebe Frankfurt GmbH zu.
                   </label>
                 </div>
               </div>

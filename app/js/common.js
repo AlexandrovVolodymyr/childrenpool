@@ -49,6 +49,11 @@ $(document).ready(function() {
 
   form.submit(function(e) {
     e.preventDefault();
+
+    // let dateConvert = form.find('.birth-date-input').val();
+    // dateConvert = (new Date(dateConvert)).parse('dd/mm/yyyy');
+    // console.log('dateConvert ', dateConvert);
+
     let data = {
       "firstName": form.find('.first-name-input').val(),
       "lastName": form.find('.last-name-input').val(),
@@ -60,7 +65,12 @@ $(document).ready(function() {
         "house": form.find('.house-input').val(),
         "postcode": form.find('.postcode-input').val()
       },
-      "email": form.find('.email-input').val()
+      "email": form.find('.email-input').val(),
+      "checkboxes": {
+        "terms-1": form.find('.terms-first .terms-input').val(),
+        "terms-2": form.find('.terms-second .terms-input').val(),
+        "terms-3": form.find('.terms-third .terms-input').val()
+      }
     };
     data = JSON.stringify(data);
 
@@ -104,6 +114,18 @@ $(document).ready(function() {
     }, 1000);
   });
 
+  // function dateConverter(UNIX_timestamp) {
+  //   const a = new Date(UNIX_timestamp);
+  //   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  //   const year = a.getFullYear();
+  //   const month = months[a.getMonth()];
+  //   const date = a.getDate();
+  //   const hour = a.getHours();
+  //   const min = a.getMinutes();
+  //   const sec = a.getSeconds();
+  //   return date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
+  // }
+
   /*get token, customer*/
   function getToken() {
     const token = $('.token-form__input').val();
@@ -123,6 +145,16 @@ $(document).ready(function() {
             userInfoSection.fadeIn();
             userInfoSection.closest('.pr-section').add('.visitors-section');
           }, 1000);
+
+          // const dateFromServer = new Date(dateConverter(msg.birthDate));
+          // let year = dateFromServer.getFullYear();
+          // let month = dateFromServer.getMonth() + 1;
+          // let day = dateFromServer.getDay();
+
+          // if (month < 9) { month = '0' + month + 1; }
+          // if (day < 9) { day = '0' + day; }
+          // const dateToHtml = day + '.' + month + '.' + year;
+
           if (msg !== 'undefined') {
             $('.user-list__value-firstName').html(msg.firstName);
             $('.user-list__value-lastName').html(msg.lastName);
@@ -278,33 +310,40 @@ $(document).ready(function() {
             <div class="pr-form__row terms">
               <div class="terms-first">
                 <div class="pretty p-default p-curve">
-                  <input type="checkbox" name="terms" data-validation="required"
+                  <input type="checkbox" name="terms" class="terms-input"
+                         data-validation="required"
                          data-validation-error-msg="Sie müssen unseren Allgemeinen Geschäftsbedingungen zustimmen"/>
                   <div class="state p-info">
-                    <label>
-                      <a href="https://www.frankfurter-baeder.de/agb/" target="_blank" class="terms__text">Akzeptiere Allgemeine Geschäftsbedingungen*</a>
+                    <label class="pr__text pr__text_label">
+                      Ich akzeptiere die
+                      <a href="https://www.frankfurter-baeder.de/agb/" target="_blank" class="pr__text pr__text_link"> Allgemeine Geschäftsbedingungen<span>*</span></a>
+                      der BäderBetriebe Frankfurt GmbH.
                     </label>
                   </div>
                 </div>
               </div>
               <div class="terms-second">
                 <div class="pretty p-default p-curve">
-                  <input type="checkbox" name="police" data-validation="required"
+                  <input type="checkbox" name="police" class="police-input"
+                         data-validation="required"
                          data-validation-error-msg="Sie müssen unserer Datenschutzerklärung zustimmen"/>
                   <div class="state p-info">
-                    <label>
-                      <a href="https://www.frankfurter-baeder.de/datenschutzerklaerung/" target="_blank" class="terms__text">Akzeptiere Datenschutz Bestimmungen*</a>
+                    <label class="pr__text pr__text_label">Ich akzeptiere die
+                      <a href="https://www.frankfurter-baeder.de/datenschutzerklaerung/" target="_blank" class="pr__text pr__text_link"> Datenschutz-Bestimmungen<span>*</span></a>
+                      der BäderBetriebe Frankfurt GmbH zur Kenntnis genommen.
                     </label>
                   </div>
                 </div>
               </div>
               <div class="terms-third">
                 <div class="pretty p-default p-curve">
-                  <input type="checkbox" name="parent" data-validation="required"
-                         data-validation-error-msg="Bist du ein Elternteil?"/>
+                         <!--data-validation="required"-->
+                  <input type="checkbox" name="advertising" class="terms-input"
+                         data-validation-error-msg="Wenn Sie von unseren Angeboten per Mail profitieren möchten klicken Sie hier."/>
                   <div class="state p-info">
-                    <label>
-                      <a href="javascript:;" class="terms__text">Ich bin erziehungsberechtigter Elternteil*</a>
+                    <label class="pr__text pr__text_label">Ich stimme der
+                      <a href="https://www.frankfurter-baeder.de/agb/" target="_blank" class="pr__text pr__text_link">Einwilligungserklärung</a>
+                      zum Erhalt von E-Mails mit Informationen und Angeboten der BäderBetriebe Frankfurt GmbH zu.
                     </label>
                   </div>
                 </div>
@@ -385,7 +424,10 @@ $(document).ready(function() {
               body.find('.btn-add').removeClass('disabled');
               body.find('#visitors-form').fadeOut();
               body.find('.visitors-answer').fadeIn();
-              let row = `<tr><td>${body.find('#visitors-form .first-name-input').val()}</td><td>${body.find('#visitors-form .last-name-input').val()}</td>${body.find('#visitors-form .birth-date-input').val()}</tr>`
+
+              console.log('child date', body.find('#visitors-form .birth-date-input').val());
+
+              let row = `<tr><td>${body.find('#visitors-form .first-name-input').val()}</td><td>${body.find('#visitors-form .last-name-input').val()}</td><td>${body.find('#visitors-form .birth-date-input').val()}</td></tr>`
               setTimeout(() => {
                 $('.body').find('#visitors-form').remove();
                 body.find('.visitors-answer').hide();

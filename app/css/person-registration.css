@@ -1,5 +1,8 @@
 .pr-section {
   padding: 15px; }
+  @media screen and (max-width: 360px) {
+    .pr-section {
+      overflow: hidden; } }
   .pr-section .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -73,6 +76,9 @@
                 flex: 0 0 100%;
         max-width: 100%;
         margin-bottom: 10px; } }
+    .pr__text_link {
+      position: relative;
+      z-index: 2; }
   .pr__input {
     border-radius: 4px;
     border: 1px solid #ccc;
@@ -312,10 +318,19 @@
       -o-transition: all 0.3s linear;
       transition: all 0.3s linear;
       white-space: normal; }
+      .terms-first .pretty .state label.pr__text_label, .terms-second .pretty .state label.pr__text_label, .terms-third .pretty .state label.pr__text_label {
+        line-height: 1.2; }
+        .terms-first .pretty .state label.pr__text_label:before, .terms-first .pretty .state label.pr__text_label:after, .terms-second .pretty .state label.pr__text_label:before, .terms-second .pretty .state label.pr__text_label:after, .terms-third .pretty .state label.pr__text_label:before, .terms-third .pretty .state label.pr__text_label:after {
+          top: 0; }
+        @media screen and (max-width: 360px) {
+          .terms-first .pretty .state label.pr__text_label, .terms-second .pretty .state label.pr__text_label, .terms-third .pretty .state label.pr__text_label {
+            font-size: 12px;
+            text-indent: unset;
+            max-width: 90%; } }
     .terms-first .pretty.has-error, .terms-second .pretty.has-error, .terms-third .pretty.has-error {
       margin-bottom: 40px; }
     .terms-first .form-error, .terms-second .form-error, .terms-third .form-error {
-      top: 15px;
+      top: 28px;
       bottom: unset;
       display: inline-block;
       opacity: 1; }
@@ -326,6 +341,9 @@
     font-family: Oswald-Regular, sans-serif;
     position: relative;
     z-index: 10; }
+
+.visitors-wrapper .terms-first .form-error, .visitors-wrapper .terms-second .form-error, .visitors-wrapper .terms-third .form-error {
+  top: 40px; }
 
 .token-form {
   display: none;
@@ -572,3 +590,7 @@
     font-family: Oswald-Regular, sans-serif; }
     .can-authorize__link:hover, .can-authorize__link:focus {
       color: #333; }
+
+@media screen and (max-width: 333px) {
+  .gj-picker-md {
+    left: 15px !important; } }
