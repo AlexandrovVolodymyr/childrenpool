@@ -29,8 +29,17 @@
       <div class="logo">
         <a class="logo__link" href="#"><img src="img/logo-bbf.jpg" class="logo__image" alt="logo"></a>
       </div>
+
+      <div class="redirect">
+        <div class="redirect__text">Überprüfen Sie Ihre E-Mails und klicken Sie auf den Link. Leitet um...</div>
+        <img src="img/redirect.png" class="redirect__image" alt="redirect">
+      </div>
+
       <div class="pr">
-        <h2 class="pr__title">antrag - kinder dauerkarte für die bbf bäder</h2>
+        <h2 class="pr__title">DATEN DES ANTRAGSTELLERS - ERZIEHUNGSBERECHTIGTEN</h2>
+        <!--<div class="can-authorize">-->
+          <!--<a href="javascript:void(0)" class="can-authorize__link">Sie können dem Link folgen, wenn Sie bereits registriert sind.</a>-->
+        <!--</div>-->
         <form class="pr-form" id="pr-form" novalidate>
           <div class="pr-form__row select-gender">
             <label for="sex" class="pr__text">Anrede<span>*</span></label>
@@ -42,7 +51,7 @@
             </select>
           </div>
           <div class="pr-form__row">
-            <label class="pr__text">Vorname</label>
+            <label class="pr__text">Vorname<span>*</span></label>
             <input type="text" class="pr__input first-name-input" placeholder="Vorname"
                    name="firstName"
                    required="required"
@@ -51,7 +60,7 @@
                    data-validation-length="1-25">
           </div>
           <div class="pr-form__row">
-            <label class="pr__text">Nachname</label>
+            <label class="pr__text">Nachname<span>*</span></label>
             <input type="text" class="pr__input last-name-input" placeholder="Nachname"
                    name="lastName"
                    required="required"
@@ -91,6 +100,7 @@
           </div>
           <div class="pr-form__row">
             <label class="pr__text">Geburtstag<span>*</span></label>
+            <!--<input type="text" class="birth-date-input">-->
             <input id="datepicker" class="pr__input hasDatepicker birth-date-input" placeholder="TT.MM.JJJJ"
                    data-attr="birth-date-input"
                    data-validation-error-msg="Sie haben kein korrektes Datum angegeben"
@@ -164,10 +174,6 @@
           <div class="pr-form__row">
             <input type="submit" value="Senden" class="btn-info pr-form-submit">
           </div>
-
-          <div class="can-authorize">
-            <a href="javascript:void(0)" class="can-authorize__link">Sie können dem Link folgen, wenn Sie bereits registriert sind.</a>
-          </div>
         </form>
         <div class="ps-form-answer">
           <div class="ps-form-answer__message">
@@ -186,75 +192,6 @@
             <input type="submit" value="Senden" class="btn-info token-form__submit">
           </div>
         </form>
-      </div>
-
-      <section class="user-info-section">
-        <h2 class="user-info__title">Your information</h2>
-        <div class="user-list">
-          <div class="user-list__item">
-            <span class="user-list__name">First Name</span>
-            <span class="user-list__value user-list__value-firstName"></span>
-          </div>
-          <div class="user-list__item">
-            <span class="user-list__name">Last Name</span>
-            <span class="user-list__value user-list__value-lastName"></span>
-          </div>
-          <div class="user-list__item">
-            <span class="user-list__name">Birth date</span>
-            <span class="user-list__value user-list__value-birthDate"></span>
-          </div>
-          <div class="user-list__item">
-            <span class="user-list__name">City</span>
-            <span class="user-list__value user-list__value-city"></span>
-          </div>
-          <div class="user-list__item">
-            <span class="user-list__name">Street</span>
-            <span class="user-list__value user-list__value-street"></span>
-          </div>
-          <div class="user-list__item">
-            <span class="user-list__name">House</span>
-            <span class="user-list__value user-list__value-house"></span>
-          </div>
-          <div class="user-list__item">
-            <span class="user-list__name">Sex</span>
-            <span class="user-list__value user-list__value-sex"></span>
-          </div>
-          <div class="user-list__item">
-            <span class="user-list__name">Email</span>
-            <span class="user-list__value user-list__value-email"></span>
-          </div>
-        </div>
-        <div class="children">
-          <div class="children__title">Erfasste Kinder:</div>
-          <table class="table table-striped children-table">
-            <thead>
-              <tr>
-                <td>Vorname</td>
-                <td>Nachname</td>
-                <td>Alter</td>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
-        </div>
-
-        <a href="#" class="btn-add">Sie können Informationen über den Besucher hinzufügen</a>
-        <div class="visitors-wrapper"></div>
-      </section>
-
-      <div class="visitors-answer">
-        <div class="visitors-answer__message">
-          <img src="img/check.png" alt="check">
-          Die Nachricht wurde an Ihre E-Mail gesendet.
-        </div>
-      </div>
-
-      <div class="age-answer">
-        <div class="age-answer__message">
-          <img src="img/check.png" alt="check">
-          Age < 14
-        </div>
       </div>
     </div>
   </section>

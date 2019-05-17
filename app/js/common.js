@@ -40,7 +40,7 @@ $(document).ready(function() {
   /*swimmer / nonswimmer ?*/
 
   /*send request post to reg 1*/
-  const baseUrl = 'http://10.10.1.35:3020';
+  const baseUrl = 'http://10.10.1.35:3010';
   const form = $('#pr-form');
   const tokenForm = $('#token-form');
   const visitorsForm = $('#visitors-form');
@@ -65,30 +65,36 @@ $(document).ready(function() {
         "house": form.find('.house-input').val(),
         "postcode": form.find('.postcode-input').val()
       },
-      "email": form.find('.email-input').val(),
       "checkboxes": {
         "terms-1": form.find('.terms-first .terms-input').val(),
         "terms-2": form.find('.terms-second .terms-input').val(),
         "terms-3": form.find('.terms-third .terms-input').val()
-      }
+      },
+      "email": form.find('.email-input').val()
     };
     data = JSON.stringify(data);
-
+    // "checkboxes": {
+    //   "terms-1": form.find('.terms-first .terms-input').val(),
+    //     "terms-2": form.find('.terms-second .terms-input').val(),
+    //     "terms-3": form.find('.terms-third .terms-input').val()
+    // },
     $.ajax({
-      url: `${baseUrl}/T4000_ChildrenAdmission/services/children/customer`,
+      url: `${baseUrl}/T4000_EntitlementREST/services/client`,
       type: "POST",
       data: data,
       contentType: 'application/json',
       dataType: 'json',
       complete: function(response, textStatus) {
+        console.log(response);
+
         if (response.status === 200) {
           form.toggle();
-          form.next().fadeIn();
+          form.prev().remove();
           setTimeout(function() {
-            form.next().remove();
             form.remove();
-            tokenForm.fadeIn();
-          }, 3000);
+            // tokenForm.fadeIn();
+            $('.redirect').show();
+          }, 1000);
         } else {
           alert('Sie haben falsche Daten eingegeben or Server antwortet nicht');
         }
@@ -107,10 +113,10 @@ $(document).ready(function() {
   $('.can-authorize__link').on('click', function(e) {
     e.preventDefault();
     form.toggle();
+    form.prev().remove();
     setTimeout(function() {
-      form.next().remove();
       form.remove();
-      tokenForm.fadeIn();
+      // tokenForm.fadeIn();
     }, 1000);
   });
 
@@ -130,7 +136,7 @@ $(document).ready(function() {
   function getToken() {
     const token = $('.token-form__input').val();
     $.ajax({
-      url: `${baseUrl}/T4000_ChildrenAdmission/services/children/customer/confirm/${token}`,
+      url: `${baseUrl}/T4000_EntitlementREST/services/client/${token}`,
       data: form,
       type: "GET",
       contentType: 'application/json',
@@ -158,7 +164,7 @@ $(document).ready(function() {
           if (msg !== 'undefined') {
             $('.user-list__value-firstName').html(msg.firstName);
             $('.user-list__value-lastName').html(msg.lastName);
-            $('.user-list__value-birthDate').html(msg.birthDate);
+            $('.user-list__value-birthDate').html(new Date(msg.birthDate));
             $('.user-list__value-sex').html(msg.sex);
             $('.user-list__value-city').html(msg.address.city);
             $('.user-list__value-street').html(msg.address.street);
@@ -173,7 +179,46 @@ $(document).ready(function() {
   }
   /*get token, customer*/
 
+
+
+  /*second step*/
+  function getParamsURL() {
+    let urlParams = new URLSearchParams(window.location.search);
+    let userToken = urlParams.get('token');
+
+    if (userToken !== null) {
+      $.ajax({
+        url: `${baseUrl}/T4000_EntitlementREST/services/client/confirm/${userToken}`,
+        data: form,
+        type: "GET",
+        contentType: 'application/json',
+        dataType: 'json',
+        complete: function (response) {
+          const msg = response.responseJSON;
+          if (msg !== 'undefined') {
+            $('.user-list__value-firstName').html(msg.firstName);
+            $('.user-list__value-lastName').html(msg.lastName);
+            $('.user-list__value-birthDate').html(new Date(msg.birthDate));
+            $('.user-list__value-sex').html(msg.sex);
+            $('.user-list__value-city').html(msg.address.city);
+            $('.user-list__value-street').html(msg.address.street);
+            $('.user-list__value-house').html(msg.address.house);
+            visitorsFormEmail = $('.user-list__value-email').html(msg.email);
+          } else {
+            alert('sorry, try it later');
+          }
+        }
+      });
+    }
+
+  }
+  getParamsURL();
+  /*second step*/
+
+
+
   /*show form*/
+  /*third step*/
   let addFormStatus = false;
   if (addFormStatus===false) {
     $('.btn-add').on('click', function(e) {
@@ -359,12 +404,7 @@ $(document).ready(function() {
         $('body').find('.email-input').val(visitorsFormEmail.text());
       }
 
-      $("input[data-attr='birth-date-input']").datepicker({
-        format: 'dd.mm.yyyy',
-        icons: {
-          rightIcon: '<img src="img/calendar-alt-regular.svg">'
-        }
-      });
+      createDatepicker();
       currVisForm.fadeIn();
 
       visitsFormSubmit(currVisForm);
@@ -372,7 +412,6 @@ $(document).ready(function() {
       // swimmersStatus();
     });
   }
-
 
   function visitsFormSubmit(currVisForm) {
     currVisForm.submit(function(e) {
@@ -410,7 +449,7 @@ $(document).ready(function() {
         }];
         data = JSON.stringify(data);
         $.ajax({
-          url: `${baseUrl}/T4000_ChildrenAdmission/services/children/visitor/${visitorsFormEmail.text()}`,
+          url: `${baseUrl}/T4000_EntitlementREST/services/client/${visitorsFormEmail.text()}`,
           type: "POST",
           data: data,
           contentType: 'application/json',
@@ -434,7 +473,6 @@ $(document).ready(function() {
                 $('.children-table tbody').append(row);
               }, 1500);
               $('.children').show();
-
             }
           }
         });
@@ -448,5 +486,6 @@ $(document).ready(function() {
 
     })
   }
+  /*third step*/
   /*show form*/
 });
