@@ -5,14 +5,13 @@
 	padding-bottom: 15px
 	height: 100%
 	min-height: 100vh
-	display: none
+	//display: none
 	align-items: center
 	.container
 		height: 100%
 		min-height: 100vh
 		
 .visitors-wrapper
-	margin-top: 15px
 	.terms
 		margin-top: 30px
 		
@@ -115,7 +114,7 @@
 			top: 15px
 
 #visitors-form
-	display: none
+	//display: none
 	.pr__input.postcode-input,
 	.pr__input.house-input,
 	.pr__input.street-input,
@@ -127,7 +126,20 @@
 		@media screen and (max-width: 700px)
 			flex: 0 0 100%
 			max-width: 100%
-	.pr-form-submit
-		width: 320px
-		justify-content: center
-		
+	.pr-form
+		&-submit
+			width: 150px
+			justify-content: center
+			margin-left: 0
+			&:last-child
+				margin-left: 20px
+		&__row
+			&_buttons
+				justify-content: flex-end
+				
+.applicant
+	margin-bottom: 15px
+	text-align: center
+	.applicant-auto
+		.pretty .state label:after, .pretty .state label:before
+			top: calc((0% - (100% - 1.2em)) - 8%)

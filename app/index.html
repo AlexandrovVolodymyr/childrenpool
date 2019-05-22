@@ -37,17 +37,14 @@
 
       <div class="pr">
         <h2 class="pr__title">DATEN DES ANTRAGSTELLERS - ERZIEHUNGSBERECHTIGTEN</h2>
-        <!--<div class="can-authorize">-->
-          <!--<a href="javascript:void(0)" class="can-authorize__link">Sie können dem Link folgen, wenn Sie bereits registriert sind.</a>-->
-        <!--</div>-->
         <form class="pr-form" id="pr-form" novalidate>
           <div class="pr-form__row select-gender">
             <label for="sex" class="pr__text">Anrede<span>*</span></label>
-            <select name="sex" id="sex" class="pr__input pr__select"
+            <select name="sex" id="sex" class="pr__input pr__select sex-input"
                     required="required">
-              <option value="0" selected>Herr</option>
-              <option value="1">Frau</option>
-              <option value="2">Divers</option>
+              <option value="Herr" selected>Herr</option>
+              <option value="Frau">Frau</option>
+              <option value="Divers">Divers</option>
             </select>
           </div>
           <div class="pr-form__row">
@@ -195,6 +192,13 @@
       </div>
     </div>
   </section>
+
+  <div class="age-answer">
+    <div class="age-answer__message">
+      <!--<img src="img/check.png" alt="check">-->
+      <p>Ihr Alter ist weniger als <span></span> Jahre alt.</p>
+    </div>
+  </div>
 
   <script src="js/libs.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
