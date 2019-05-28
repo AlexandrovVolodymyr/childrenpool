@@ -24,239 +24,242 @@
 </head>
 
 <body class="body">
-  <section class="user-info-section">
-    <h2 class="user-info__title">Your information</h2>
-    <div class="user-list">
-      <div class="user-list__item">
-        <span class="user-list__name">Anrede</span>
-        <span class="user-list__value user-list__value-sex"></span>
-      </div>
-      <div class="user-list__item">
-        <span class="user-list__name">Vorname</span>
-        <span class="user-list__value user-list__value-firstName"></span>
-      </div>
-      <div class="user-list__item">
-        <span class="user-list__name">Nachname</span>
-        <span class="user-list__value user-list__value-lastName"></span>
-      </div>
-      <div class="user-list__item">
-        <span class="user-list__name">Strasse</span>
-        <span class="user-list__value user-list__value-street"></span>
-      </div>
-      <div class="user-list__item">
-        <span class="user-list__name">Nr.</span>
-        <span class="user-list__value user-list__value-house"></span>
-      </div>
-      <div class="user-list__item">
-        <span class="user-list__name">PLZ</span>
-        <span class="user-list__value user-list__value-postcode"></span>
-      </div>
-      <div class="user-list__item">
-        <span class="user-list__name">Wohnort</span>
-        <span class="user-list__value user-list__value-city"></span>
-      </div>
-      <div class="user-list__item">
-        <span class="user-list__name">Geburtstag</span>
-        <span class="user-list__value user-list__value-birthDate"></span>
-      </div>
-      <div class="user-list__item">
-        <span class="user-list__name">Mailadresse</span>
-        <span class="user-list__value user-list__value-email"></span>
-      </div>
+<section class="user-info-section">
+  <h2 class="user-info__title">DATEN DES ERZIEHUNGSBERECHTIGEN</h2>
+  <div class="user-list">
+    <div class="user-list__item">
+      <span class="user-list__name">Anrede</span>
+      <span class="user-list__value user-list__value-sex"></span>
     </div>
-    <div class="children">
-      <div class="children__title">Erfasste Kinder:</div>
-      <table class="table table-striped children-table">
-        <thead>
-        <tr>
-          <td>Vorname</td>
-          <td>Nachname</td>
-          <td>Alter</td>
-        </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
+    <div class="user-list__item">
+      <span class="user-list__name">Vorname</span>
+      <span class="user-list__value user-list__value-firstName"></span>
     </div>
+    <div class="user-list__item">
+      <span class="user-list__name">Nachname</span>
+      <span class="user-list__value user-list__value-lastName"></span>
+    </div>
+    <div class="user-list__item">
+      <span class="user-list__name">Strasse</span>
+      <span class="user-list__value user-list__value-street"></span>
+    </div>
+    <!--<div class="user-list__item">-->
+    <!--<span class="user-list__name">Nr.</span>-->
+    <!--<span class="user-list__value user-list__value-house"></span>-->
+    <!--</div>-->
+    <div class="user-list__item">
+      <span class="user-list__name">PLZ</span>
+      <span class="user-list__value user-list__value-postcode"></span>
+    </div>
+    <div class="user-list__item">
+      <span class="user-list__name">Wohnort</span>
+      <span class="user-list__value user-list__value-city"></span>
+    </div>
+    <div class="user-list__item">
+      <span class="user-list__name">Geburtstag</span>
+      <span class="user-list__value user-list__value-birthDate"></span>
+    </div>
+    <div class="user-list__item">
+      <span class="user-list__name">Mailadresse</span>
+      <span class="user-list__value user-list__value-email"></span>
+    </div>
+  </div>
+  <div class="children">
+    <div class="children__title">Bereits erfasste Kinder:</div>
+    <table class="table table-striped children-table">
+      <thead>
+      <tr>
+        <td>Vorname</td>
+        <td>Nachname</td>
+        <td>Geburtsdatum</td>
+        <td>Alter</td>
+        <td>löschen</td>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
 
-    <a href="#" class="btn-add">Weitere Kinder:</a>
-    <div class="visitors-wrapper">
-      <form class="pr-form" id="visitors-form" novalidate>
-        <div class="applicant">
-          <div class="applicant-auto">
-            <div class="pretty p-default p-curve">
-              <input type="checkbox" name="applicant-checkbox" class="terms-input"/>
-              <div class="state p-info">
-                <label class="pr__text pr__text_label">Gleiche Anschrift venierenden</label>
-              </div>
+  <a href="#" class="btn-add">Bezugsberechtigte Kinder erfassen:</a>
+  <div class="visitors-wrapper">
+    <form class="pr-form" id="visitors-form" novalidate>
+      <div class="applicant">
+        <div class="applicant-auto">
+          <div class="pretty p-default p-curve">
+            <input type="checkbox" name="applicant-checkbox" class="terms-input"/>
+            <div class="state p-info">
+              <label class="pr__text pr__text_label">Anschrift des Antragsstellers verwenden</label>
             </div>
           </div>
         </div>
-        <div class="current-form" id="current-form">
-          <div class="pr-form__row select-gender">
-            <label for="sex" class="pr__text">Anrede</label>
-            <select name="sex" id="sex" class="pr__input pr__select sex-input"
-                    required="required">
-              <option value="Herr" selected>Herr</option>
-              <option value="Frau">Frau</option>
-              <option value="Divers">Divers</option>
-            </select>
-          </div>
-          <div class="pr-form__row">
-            <label class="pr__text">Vorname</label>
-            <input type="text" class="pr__input first-name-input" placeholder="Vorname"
-                   name="firstName"
-                   required="required"
-                   data-validation="length"
-                   data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
-                   data-validation-length="1-25">
-          </div>
-          <div class="pr-form__row">
-            <label class="pr__text">Nachname</label>
-            <input type="text" class="pr__input last-name-input" placeholder="Nachname"
-                   name="lastName"
-                   required="required"
-                   data-validation="length"
-                   data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
-                   data-validation-length="1-25">
-          </div>
-          <div class="pr-form__row">
-            <label class="pr__text">Mail Adresse*</label>
-            <input type="text" placeholder="Mail" class="pr__input email-input"
-                   name="email"
-                   data-validation="email"
-                   data-validation-error-msg="Sie haben keine korrekte E-Mail-Adresse angegeben"
-                   required="required">
-          </div>
-          <div class="pr-form__row current-address">
-            <label class="pr__text">Strasse</label>
-            <input type="text" placeholder="Strasse" class="pr__input street-input"
-                   name="street"
-                   required="required"
-                   data-validation="length"
-                   data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
-                   data-validation-length="1-50">
-          </div>
-          <div class="pr-form__row current-address">
-            <label class="pr__text"><span class="pr__text_into">Hausnummer</span></label>
-            <input type="text" placeholder="Hausnummer" class="pr__input house-input"
-                   name="house"
-                   required="required"
-                   data-validation="length"
-                   data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
-                   data-validation-length="1-50">
-          </div>
-          <div class="pr-form__row current-address">
-            <label class="pr__text">Postleitzahl</label>
-            <input type="text" placeholder="Postleitzahl" class="pr__input postcode-input"
-                   name="postcode"
-                   data-validation="number"
-                   data-validation-allowing="float"
-                   data-validation-error-msg="Sie haben keine korrekte Nummer angegeben"
-                   maxlength="5"
-                   required="required">
-          </div>
-          <div class="pr-form__row current-address">
-            <label class="pr__text">Wohnort</label>
-            <input type="text" placeholder="Wohnort" class="pr__input city-input"
-                   name="city"
-                   required="required"
-                   data-validation="length"
-                   data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
-                   data-validation-length="1-50">
-          </div>
-          <div class="pr-form__row">
-            <label class="pr__text">Geburtstag</label>
-            <input id="datepicker2" class="pr__input hasDatepicker birth-date-input" placeholder="DD.MM.JJJJ"
-                   data-attr="birth-date-input"
-                   data-validation-error-msg="Sie haben kein korrektes Datum angegeben"
-                   data-validation="required">
-          </div>
-          <div class="pr-form__row swimmers">
-            <label class="pr__text">Swimmers</label>
-            <div class="swimmers-status" id="swimmers-status">
-              <div class="pretty p-default p-curve swimmers-true">
-                <input type="radio" name="swimmer"
-                       data-validation="required"
-                       data-validation-error-msg="Sie müssen einen Schwimmer wählen oder nicht"/>
-                <div class="state p-info-o">
-                  <label>
-                    <span class="swimmers__text">Ja</span>
-                  </label>
-                </div>
-              </div>
-              <div class="pretty p-default p-curve swimmers-false">
-                <input type="radio" name="swimmer"
-                       data-validation="required"
-                       data-validation-error-msg="Sie müssen einen Schwimmer wählen oder nicht"/>
-                <div class="state p-info-o">
-                  <label>
-                    <span class="swimmers__text">Nein</span>
-                  </label>
-                </div>
+      </div>
+      <div class="current-form" id="current-form">
+        <div class="pr-form__row select-gender">
+          <label for="sex" class="pr__text">Anrede*</label>
+          <select name="sex" id="sex" class="pr__input pr__select sex-input"
+                  required="required">
+            <option value="Herr" selected>Herr</option>
+            <option value="Frau">Frau</option>
+            <option value="Divers">Divers</option>
+          </select>
+        </div>
+        <div class="pr-form__row">
+          <label class="pr__text">Vorname*</label>
+          <input type="text" class="pr__input first-name-input" placeholder="Vorname"
+                 name="firstName"
+                 required="required"
+                 data-validation="length"
+                 data-validation-error-msg="Der Eingabewert muss zwischen 1 und 25 Zeichen betragen"
+                 data-validation-length="1-25">
+        </div>
+        <div class="pr-form__row">
+          <label class="pr__text">Nachname*</label>
+          <input type="text" class="pr__input last-name-input" placeholder="Nachname"
+                 name="lastName"
+                 required="required"
+                 data-validation="length"
+                 data-validation-error-msg="Der Eingabewert muss zwischen 1 und 25 Zeichen betragen"
+                 data-validation-length="1-25">
+        </div>
+        <div class="pr-form__row">
+          <label class="pr__text">Mail Adresse*</label>
+          <input type="text" placeholder="Mail" class="pr__input email-input"
+                 name="email"
+                 data-validation="email"
+                 data-validation-error-msg="Sie haben keine korrekte E-Mail-Adresse angegeben"
+                 required="required">
+        </div>
+        <div class="pr-form__row current-address">
+          <label class="pr__text">Strasse*</label>
+          <input type="text" placeholder="Strasse" class="pr__input street-input"
+                 name="street"
+                 required="required"
+                 data-validation="length"
+                 data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                 data-validation-length="1-50">
+        </div>
+        <!-- Customer BBF wont a separate field for number-->
+        <!-- <div class="pr-form__row current-address">
+          <label class="pr__text"><span class="pr__text_into">Hausnummer</span></label>
+          <input type="text" placeholder="Hausnummer" class="pr__input house-input"
+                 name="house"
+                 required="required"
+                 data-validation="length"
+                 data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                 data-validation-length="1-50">
+        </div>-->
+        <div class="pr-form__row current-address">
+          <label class="pr__text">Postleitzahl*</label>
+          <input type="text" placeholder="Postleitzahl" class="pr__input postcode-input"
+                 name="postcode"
+                 data-validation="number"
+                 data-validation-allowing="float"
+                 data-validation-error-msg="Sie haben keine korrekte Nummer angegeben"
+                 maxlength="5"
+                 required="required">
+        </div>
+        <div class="pr-form__row current-address">
+          <label class="pr__text">Wohnort*</label>
+          <input type="text" placeholder="Wohnort" class="pr__input city-input"
+                 name="city"
+                 required="required"
+                 data-validation="length"
+                 data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                 data-validation-length="1-50">
+        </div>
+        <div class="pr-form__row">
+          <label class="pr__text">Geburtstag*</label>
+          <input id="datepicker2" class="pr__input hasDatepicker birth-date-input" placeholder="DD.MM.JJJJ"
+                 data-attr="birth-date-input"
+                 data-validation-error-msg="Sie haben kein korrektes Datum angegeben"
+                 data-validation="required">
+        </div>
+        <div class="pr-form__row swimmers">
+          <label class="pr__text">Swimmers</label>
+          <div class="swimmers-status" id="swimmers-status">
+            <div class="pretty p-default p-curve swimmers-true">
+              <input type="radio" name="swimmer"
+                     data-validation="required"
+                     data-validation-error-msg="Sie müssen einen Schwimmer wählen oder nicht"/>
+              <div class="state p-info-o">
+                <label>
+                  <span class="swimmers__text">Ja</span>
+                </label>
               </div>
             </div>
-          </div>
-          <div class="pr-form__row select-course">
-            <label for="course" class="pr__text">Schwimmkurs besucht</label>
-            <select name="course" id="course" class="pr__input pr__select course-input"
-                    required="required">
-              <option value="Nein" selected>Nein</option>
-              <option value="Ja bei BBF">Ja bei BBF</option>
-              <option value="Ja anderer Anbieter">Ja anderer Anbieter</option>
-            </select>
-          </div>
-          <!--<div class="pr-form__row swimmers-category">-->
-          <!--<label class="pr__text">Kategorie</label>-->
-          <!--<input type="text" class="swimmers-category-input pr__input" placeholder="Kategorie"-->
-          <!--name="swimmerClass"-->
-          <!--data-validation="length"-->
-          <!--data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"-->
-          <!--data-validation-length="1-50">-->
-          <!--</div>-->
-        </div>
-
-        <div class="created-form"></div>
-
-        <div class="pr-form__row terms">
-          <div class="terms-third">
-            <div class="pretty p-default p-curve">
-              <!--data-validation="required"-->
-              <input type="checkbox" name="advertising" class="terms-input"
-                     data-validation-error-msg="Wenn Sie von unseren Angeboten per Mail profitieren möchten klicken Sie hier."/>
-              <div class="state p-info">
-                <label class="pr__text pr__text_label">Ich stimme der
-                  <a href="https://www.frankfurter-baeder.de/agb/" target="_blank" class="pr__text pr__text_link">Einwilligungserklärung</a>
-                  zum Erhalt von E-Mails mit Informationen und Angeboten der BäderBetriebe Frankfurt GmbH zu.
+            <div class="pretty p-default p-curve swimmers-false">
+              <input type="radio" name="swimmer"
+                     data-validation="required"
+                     data-validation-error-msg="Sie müssen einen Schwimmer wählen oder nicht"/>
+              <div class="state p-info-o">
+                <label>
+                  <span class="swimmers__text">Nein</span>
                 </label>
               </div>
             </div>
           </div>
         </div>
-        <div class="pr-form__row pr-form__row_buttons">
-          <input type="submit" value="+ weiteres Kind erfassen" class="btn-info pr-form-submit kind-add-btn">
-          <input type="submit" value="Antrag einreichen" class="btn-info pr-form-submit all-add-btn">
+        <div class="pr-form__row select-course">
+          <label for="course" class="pr__text">Schwimmkurs besucht</label>
+          <select name="course" id="course" class="pr__input pr__select course-input"
+                  required="required">
+            <option value="Nein" selected>Nein</option>
+            <option value="Ja bei BBF">Ja bei BBF</option>
+            <option value="Ja anderer Anbieter">Ja anderer Anbieter</option>
+          </select>
         </div>
-      </form>
-    </div>
-  </section>
+        <!--<div class="pr-form__row swimmers-category">-->
+        <!--<label class="pr__text">Kategorie</label>-->
+        <!--<input type="text" class="swimmers-category-input pr__input" placeholder="Kategorie"-->
+        <!--name="swimmerClass"-->
+        <!--data-validation="length"-->
+        <!--data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"-->
+        <!--data-validation-length="1-50">-->
+        <!--</div>-->
+      </div>
 
-  <div class="visitors-answer">
-    <div class="visitors-answer__message">
-      <img src="img/check.png" alt="check">
-      Die Nachricht wurde an Ihre E-Mail gesendet.
-    </div>
+      <div class="created-form"></div>
+
+      <div class="pr-form__row terms">
+        <div class="terms-third">
+          <div class="pretty p-default p-curve">
+
+            <input type="checkbox" name="advertising" class="terms-input"
+                   data-validation="required"
+                   data-validation-error-msg="Bestätigen Sie dass Sie die Erziehungsberechtige Person des Bezugsberechtigen Kindes sind."/>
+            <div class="state p-info">
+              <label class="pr__text pr__text_label">Ich bin erziehungsberechtiges Elterneteil.
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pr-form__row pr-form__row_buttons">
+        <input type="hidden" class="helper-input">
+        <input type="submit" value="+ weiteres Kind erfassen" class="btn-info pr-form-submit kind-add-btn">
+        <button type="button" class="btn-info pr-form-submit all-add-btn" id="complete-btn">Antrag einreichen</button>
+      </div>
+    </form>
   </div>
+</section>
 
-  <div class="age-answer">
-    <div class="age-answer__message">
-      <!--<img src="img/check.png" alt="check">-->
-      <p>Ihr Alter ist weniger als <span></span> Jahre alt.</p>
-    </div>
+<div class="visitors-answer">
+  <div class="visitors-answer__message">
+    <img src="img/check.png" alt="check">
+    Die Nachricht wurde an Ihre E-Mail gesendet.
   </div>
+</div>
 
-  <script src="js/libs.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
-  <script src="js/common.js"></script>
+<div class="age-answer">
+  <div class="age-answer__message">
+    <!--<img src="img/check.png" alt="check">-->
+    <p>Ihr Alter ist weniger als <span></span> Jahre alt.</p>
+  </div>
+</div>
+
+<script src="js/libs.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script src="js/common.js"></script>
 </body>
 </html>

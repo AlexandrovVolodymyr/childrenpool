@@ -90,19 +90,6 @@
     .pr__input:focus {
       -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
               box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4); }
-    .pr__input.street-input {
-      -webkit-box-flex: 0;
-          -ms-flex: 0 0 200px;
-              flex: 0 0 200px;
-      max-width: 200px;
-      margin-left: auto; }
-      @media screen and (max-width: 700px) {
-        .pr__input.street-input {
-          -webkit-box-flex: 0;
-              -ms-flex: 0 0 70%;
-                  flex: 0 0 70%;
-          max-width: 70%;
-          margin-left: 0; } }
     .pr__input.house-input {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 105px;
@@ -417,7 +404,8 @@
   width: 100%;
   padding: 15px;
   max-width: 650px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  overflow: hidden; }
   .user-info-section .btn-add {
     color: #000;
     font-size: 14px;
@@ -589,7 +577,7 @@
       top: 38px !important; } }
 
 .gj-datepicker-md img {
-  max-width: 25px; }
+  width: 25px; }
 
 .can-authorize {
   padding-top: 35px;

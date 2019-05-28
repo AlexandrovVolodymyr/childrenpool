@@ -24,184 +24,193 @@
 </head>
 
 <body class="body">
-	<section class="pr-section">
-    <div class="container">
-      <div class="logo">
-        <a class="logo__link" href="#"><img src="img/logo-bbf.jpg" class="logo__image" alt="logo"></a>
-      </div>
+<section class="pr-section">
+  <div class="container">
+    <div class="logo">
+      <a class="logo__link" href="#"><img src="img/logo-bbf.jpg" class="logo__image" alt="logo"></a>
+    </div>
 
-      <div class="redirect">
-        <div class="redirect__text">Überprüfen Sie Ihre E-Mails und klicken Sie auf den Link. Leitet um...</div>
-        <img src="img/redirect.png" class="redirect__image" alt="redirect">
-      </div>
+    <div class="redirect">
+      <div class="redirect__text">Überprüfen Sie Ihre E-Mails und klicken Sie auf den Link. Leitet um...</div>
+      <img src="img/redirect.png" class="redirect__image" alt="redirect">
+    </div>
 
-      <div class="pr">
-        <h2 class="pr__title">DATEN DES ANTRAGSTELLERS - ERZIEHUNGSBERECHTIGTEN</h2>
-        <form class="pr-form" id="pr-form" novalidate>
-          <div class="pr-form__row select-gender">
-            <label for="sex" class="pr__text">Anrede<span>*</span></label>
-            <select name="sex" id="sex" class="pr__input pr__select sex-input"
-                    required="required">
-              <option value="Herr" selected>Herr</option>
-              <option value="Frau">Frau</option>
-              <option value="Divers">Divers</option>
-            </select>
-          </div>
-          <div class="pr-form__row">
-            <label class="pr__text">Vorname<span>*</span></label>
-            <input type="text" class="pr__input first-name-input" placeholder="Vorname"
-                   name="firstName"
-                   required="required"
-                   data-validation="length"
-                   data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
-                   data-validation-length="1-25">
-          </div>
-          <div class="pr-form__row">
-            <label class="pr__text">Nachname<span>*</span></label>
-            <input type="text" class="pr__input last-name-input" placeholder="Nachname"
-                   name="lastName"
-                   required="required"
-                   data-validation="length"
-                   data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
-                   data-validation-length="1-25">
-          </div>
-          <div class="pr-form__row current-address">
-            <label class="pr__text"><span class="pr__text_into">Strasse<span>*</span></span>Nr.<span>*</span></label>
-            <input type="text" placeholder="Strasse" class="pr__input street-input"
-                   name="street"
-                   required="required"
-                   data-validation="length"
-                   data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
-                   data-validation-length="1-50">
-            <input type="text" placeholder="Nr." class="pr__input house-input"
-                   name="house"
-                   required="required"
-                   data-validation="length"
-                   data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
-                   data-validation-length="1-50">
-          </div>
-          <div class="pr-form__row current-address">
-            <label class="pr__text"><span class="pr__text_into pr__text_into_last">PLZ<span>*</span></span>Wohnort<span>*</span></label>
-            <input type="text" placeholder="PLZ" class="pr__input postcode-input"
-                   name="postcode"
-                   data-validation="number"
-                   data-validation-error-msg="Sie haben keine korrekte Nummer angegeben"
-                   maxlength="5"
-                   required="required">
-            <input type="text" placeholder="Wohnort" class="pr__input city-input"
-                   name="city"
-                   required="required"
-                   data-validation="length"
-                   data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
-                   data-validation-length="1-50">
-          </div>
-          <div class="pr-form__row">
-            <label class="pr__text">Geburtstag<span>*</span></label>
-            <!--<input type="text" class="birth-date-input">-->
-            <input id="datepicker" class="pr__input hasDatepicker birth-date-input" placeholder="TT.MM.JJJJ"
-                   data-attr="birth-date-input"
-                   data-validation-error-msg="Sie haben kein korrektes Datum angegeben"
-                   data-validation="required">
-            <!--<input type="text" class="pr__input birth-date-input" placeholder="YYYY-MM-DD"-->
-                   <!--name="birthDate"-->
-                   <!--required="required"-->
-                   <!--data-validation="birthdate"-->
-                   <!--data-validation-help="Keine Daten in der Zukunft oder älter als 120 Jahre"-->
-                   <!--data-validation-error-msg="Sie haben kein korrektes Datum angegeben"-->
-                   <!--data-validation-format="yyyy-mm-dd">-->
-          </div>
-          <div class="pr-form__row">
-            <label class="pr__text">Mailadresse<span>*</span></label>
-            <input type="text" class="pr__input email-input email-confirm" placeholder="hans.muster@frankfurt.de"
-                   name="email"
-                   data-validation="email"
-                   data-validation-error-msg="Sie haben keine korrekte E-Mail-Adresse angegeben"
-                   required="required">
-          </div>
-          <div class="pr-form__row">
-            <label class="pr__text">Mailadresse bestätigen<span>*</span></label>
-            <input type="text" class="pr__input email-input-suggest" placeholder="hans.muster@frankfurt.de"
-                   name="repeat"
-                   data-validation="confirmation"
-                   data-validation-confirm="email"
-                   required="required">
-          </div>
-          <div class="pr-form__row terms">
-            <div class="terms-first">
-              <div class="pretty p-default p-curve">
-                <input type="checkbox" name="terms" class="terms-input"
-                       data-validation="required"
-                       data-validation-error-msg="Sie müssen unseren Allgemeinen Geschäftsbedingungen zustimmen"/>
-                <div class="state p-info">
-                  <label class="pr__text pr__text_label">
-                    Ich akzeptiere die
-                    <a href="https://www.frankfurter-baeder.de/agb/" target="_blank" class="pr__text pr__text_link"> Allgemeine Geschäftsbedingungen<span>*</span></a>
-                    der BäderBetriebe Frankfurt GmbH.
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="terms-second">
-              <div class="pretty p-default p-curve">
-                <input type="checkbox" name="police" class="police-input"
-                       data-validation="required"
-                       data-validation-error-msg="Sie müssen unserer Datenschutzerklärung zustimmen"/>
-                <div class="state p-info">
-                  <label class="pr__text pr__text_label">Ich akzeptiere die
-                    <a href="https://www.frankfurter-baeder.de/datenschutzerklaerung/" target="_blank" class="pr__text pr__text_link"> Datenschutz-Bestimmungen<span>*</span></a>
-                    der BäderBetriebe Frankfurt GmbH zur Kenntnis genommen.
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="terms-third">
-              <div class="pretty p-default p-curve">
-                       <!--data-validation="required"-->
-                <input type="checkbox" name="advertising" class="terms-input"
-                       data-validation-error-msg="Wenn Sie von unseren Angeboten per Mail profitieren möchten klicken Sie hier."/>
-                <div class="state p-info">
-                  <label class="pr__text pr__text_label">Ich stimme der
-                    <a href="https://www.frankfurter-baeder.de/agb/" target="_blank" class="pr__text pr__text_link">Einwilligungserklärung</a>
-                    zum Erhalt von E-Mails mit Informationen und Angeboten der BäderBetriebe Frankfurt GmbH zu.
-                  </label>
-                </div>
+    <div class="pr">
+      <h2 class="pr__title">ERZIEHUNGSBERECHTIGTER</h2>
+      <form class="pr-form" id="pr-form" novalidate>
+        <div class="pr-form__row select-gender">
+          <label for="sex" class="pr__text">Anrede<span>*</span></label>
+          <select name="sex" id="sex" class="pr__input pr__select sex-input"
+                  required="required">
+            <option value="Herr" selected>Herr</option>
+            <option value="Frau">Frau</option>
+            <option value="Divers">Divers</option>
+          </select>
+        </div>
+        <div class="pr-form__row">
+          <label class="pr__text">Vorname<span>*</span></label>
+          <input type="text" class="pr__input first-name-input" placeholder="Vorname"
+                 name="firstName"
+                 required="required"
+                 data-validation="length"
+                 data-validation-error-msg="Der Eingabewert muss zwischen 1 und 25 Zeichen betragen"
+                 data-validation-length="1-25">
+        </div>
+        <div class="pr-form__row">
+          <label class="pr__text">Nachname<span>*</span></label>
+          <input type="text" class="pr__input last-name-input" placeholder="Nachname"
+                 name="lastName"
+                 required="required"
+                 data-validation="length"
+                 data-validation-error-msg="Der Eingabewert muss zwischen 1 und 25 Zeichen betragen"
+                 data-validation-length="1-25">
+        </div>
+        <!-- Customer BBF wont a separate field for number-->
+        <!-- <div class="pr-form__row current-address">
+          <label class="pr__text"><span class="pr__text_into">Strasse<span>*</span></span>Nr.<span>*</span></label>
+          <input type="text" placeholder="Strasse" class="pr__input street-input"
+                 name="street"
+                 required="required"
+                 data-validation="length"
+                 data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                 data-validation-length="1-50">
+          <input type="text" placeholder="Nr." class="pr__input house-input"
+                 name="house"
+                 required="required"
+                 data-validation="length"
+                 data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                 data-validation-length="1-50">
+        </div>-->
+        <div class="pr-form__row">
+          <label class="pr__text">Strasse<span>*</span></label>
+          <input type="text" class="pr__input street-input" placeholder="Strasse"
+                 name="street"
+                 required="required"
+                 data-validation="length"
+                 data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                 data-validation-length="1-50">
+        </div>
+        <div class="pr-form__row current-address">
+          <label class="pr__text"><span class="pr__text_into pr__text_into_last">PLZ<span>*</span></span>Wohnort<span>*</span></label>
+          <input type="text" placeholder="PLZ" class="pr__input postcode-input"
+                 name="postcode"
+                 data-validation="number"
+                 data-validation-error-msg="Sie haben keine korrekte Nummer angegeben"
+                 maxlength="5"
+                 required="required">
+          <input type="text" placeholder="Wohnort" class="pr__input city-input"
+                 name="city"
+                 required="required"
+                 data-validation="length"
+                 data-validation-error-msg="Der Eingabewert muss zwischen 1 und 50 Zeichen betragen"
+                 data-validation-length="1-50">
+        </div>
+        <div class="pr-form__row">
+          <label class="pr__text">Geburtstag<span>*</span></label>
+          <!--<input type="text" class="birth-date-input">-->
+          <input id="datepicker" class="pr__input hasDatepicker birth-date-input" placeholder="TT.MM.JJJJ"
+                 data-attr="birth-date-input"
+                 data-validation-error-msg="Sie haben kein korrektes Datum angegeben"
+                 data-validation="required">
+          <!--<input type="text" class="pr__input birth-date-input" placeholder="YYYY-MM-DD"-->
+          <!--name="birthDate"-->
+          <!--required="required"-->
+          <!--data-validation="birthdate"-->
+          <!--data-validation-help="Keine Daten in der Zukunft oder älter als 120 Jahre"-->
+          <!--data-validation-error-msg="Sie haben kein korrektes Datum angegeben"-->
+          <!--data-validation-format="yyyy-mm-dd">-->
+        </div>
+        <div class="pr-form__row">
+          <label class="pr__text">Mailadresse<span>*</span></label>
+          <input type="text" class="pr__input email-input email-confirm" placeholder="hans.muster@frankfurt.de"
+                 name="email"
+                 data-validation="email"
+                 data-validation-error-msg="Sie haben keine korrekte E-Mail-Adresse angegeben"
+                 required="required">
+        </div>
+        <div class="pr-form__row">
+          <label class="pr__text">Mailadresse bestätigen<span>*</span></label>
+          <input type="text" class="pr__input email-input-suggest" placeholder="hans.muster@frankfurt.de"
+                 name="repeat"
+                 data-validation="confirmation"
+                 data-validation-confirm="email"
+                 required="required">
+        </div>
+        <div class="pr-form__row terms">
+          <div class="terms-first">
+            <div class="pretty p-default p-curve">
+              <input type="checkbox" name="terms" class="terms-input"
+                     data-validation="required"
+                     data-validation-error-msg="Sie müssen unseren Allgemeinen Geschäftsbedingungen zustimmen"/>
+              <div class="state p-info">
+                <label class="pr__text pr__text_label">
+                  Ich akzeptiere die
+                  <a href="https://www.frankfurter-baeder.de/agb/" target="_blank" class="pr__text pr__text_link"> Allgemeine Geschäftsbedingungen<span>*</span></a>
+                  der BäderBetriebe Frankfurt GmbH.
+                </label>
               </div>
             </div>
           </div>
-          <div class="pr-form__row">
-            <input type="submit" value="Senden" class="btn-info pr-form-submit">
+          <div class="terms-second">
+            <div class="pretty p-default p-curve">
+              <input type="checkbox" name="police" class="police-input"
+                     data-validation="required"
+                     data-validation-error-msg="Sie müssen unserer Datenschutzerklärung zustimmen"/>
+              <div class="state p-info">
+                <label class="pr__text pr__text_label">Ich akzeptiere die
+                  <a href="https://www.frankfurter-baeder.de/datenschutzerklaerung/" target="_blank" class="pr__text pr__text_link"> Datenschutz-Bestimmungen<span>*</span></a>
+                  der BäderBetriebe Frankfurt GmbH zur Kenntnis genommen.
+                </label>
+              </div>
+            </div>
           </div>
-        </form>
-        <div class="ps-form-answer">
-          <div class="ps-form-answer__message">
-            <img src="img/check.png" alt="check">
-            Die Nachricht wurde an Ihre E-Mail gesendet.
+          <div class="terms-third">
+            <div class="pretty p-default p-curve">
+              <!--data-validation="required"-->
+              <input type="checkbox" name="advertising" class="terms-input"
+                     data-validation-error-msg="Wenn Sie von unseren Angeboten per Mail profitieren möchten klicken Sie hier."/>
+              <div class="state p-info">
+                <label class="pr__text pr__text_label">Ich stimme der
+                  <a href="https://www.frankfurter-baeder.de/agb/" target="_blank" class="pr__text pr__text_link">Einwilligungserklärung</a>
+                  zum Erhalt von E-Mails mit Informationen und Angeboten der BäderBetriebe Frankfurt GmbH zu.
+                </label>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="token">
-        <form class="token-form" id="token-form" novalidate>
-          <div class="token-form__row">
-            <label class="token-form__label">Geben Sie das Token aus der E-Mail ein</label>
-            <input type="text" class="token-form__input">
-          </div>
-          <div class="token-form__row">
-            <input type="submit" value="Senden" class="btn-info token-form__submit">
-          </div>
-        </form>
+        <div class="pr-form__row">
+          <input type="submit" value="Senden" class="btn-info pr-form-submit">
+        </div>
+      </form>
+      <div class="ps-form-answer">
+        <div class="ps-form-answer__message">
+          <img src="img/check.png" alt="check">
+          Die Nachricht wurde an Ihre E-Mail gesendet.
+        </div>
       </div>
     </div>
-  </section>
-
-  <div class="age-answer">
-    <div class="age-answer__message">
-      <!--<img src="img/check.png" alt="check">-->
-      <p>Ihr Alter ist weniger als <span></span> Jahre alt.</p>
+    <div class="token">
+      <form class="token-form" id="token-form" novalidate>
+        <div class="token-form__row">
+          <label class="token-form__label">Geben Sie das Token aus der E-Mail ein</label>
+          <input type="text" class="token-form__input">
+        </div>
+        <div class="token-form__row">
+          <input type="submit" value="Senden" class="btn-info token-form__submit">
+        </div>
+      </form>
     </div>
   </div>
+</section>
 
-  <script src="js/libs.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
-  <script src="js/common.js"></script>
+<div class="age-answer">
+  <div class="age-answer__message">
+    <!--<img src="img/check.png" alt="check">-->
+    <p>Ihr Alter ist weniger als <span></span> Jahre alt.</p>
+  </div>
+</div>
+<script src="js/libs.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script src="js/common.js"></script>
 </body>
 </html>

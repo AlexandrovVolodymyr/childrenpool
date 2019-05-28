@@ -143,3 +143,35 @@
 	.applicant-auto
 		.pretty .state label:after, .pretty .state label:before
 			top: calc((0% - (100% - 1.2em)) - 8%)
+	
+.kind-add-btn
+	margin-left: 0
+	&:hover, &:focus
+		color: #fff
+		-webkit-border-radius: 0
+		-moz-border-radius: 0
+		border-radius: 0
+		text-decoration: none
+	@media screen and (max-width: 425px)
+		margin-top: 15px
+		width: 212px
+		text-align: center
+.all-add-btn
+	margin-left: 15px
+	&:hover, &:focus
+		color: #fff
+		-webkit-border-radius: 0
+		-moz-border-radius: 0
+		border-radius: 0
+		text-decoration: none
+	@media screen and (max-width: 425px)
+		margin-top: 15px
+		width: 212px
+		text-align: center
+.delete
+	font-family: $font
+	font-weight: bold
+	font-size: 18px
+	color: #000
+	cursor: pointer
+	display: flex
